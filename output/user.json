@@ -1,0 +1,10 @@
+{
+  "name": "HaxedBlack",
+  "age": 19,
+  "skills": [
+    "Python",
+    "Git",
+    "CLI Tools"
+  ],
+  "is_active": true
+}
