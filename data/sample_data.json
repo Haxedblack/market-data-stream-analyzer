@@ -1,5 +1,8 @@
 [
-  { "timestamp": "2023-10-01T09:30:00", "symbol": "AAPL", "price": 173.2, "volume": 500 },
-  { "timestamp": "2023-10-01T09:31:00", "symbol": "AAPL", "price": 173.4, "volume": 620 },
-  { "timestamp": "2023-10-01T09:30:00", "symbol": "GOOG", "price": 137.5, "volume": 200 }
+  { "timestamp": "2023-10-01T09:30:00", "symbol": "AAPL", "price": 170.5, "volume": 500 },
+  { "timestamp": "2023-10-01T09:31:00", "symbol": "AAPL", "price": 171.2, "volume": 450 },
+  { "timestamp": "2023-10-01T09:32:00", "symbol": "AAPL", "price": 172.8, "volume": 600 },
+  { "timestamp": "2023-10-01T09:33:00", "symbol": "AAPL", "price": 174.0, "volume": 400 },
+  { "timestamp": "2023-10-01T09:34:00", "symbol": "AAPL", "price": 175.3, "volume": 550 },
+  { "timestamp": "2023-10-01T09:35:00", "symbol": "GOOG", "price": 2900.0, "volume": 300 }
 ]
