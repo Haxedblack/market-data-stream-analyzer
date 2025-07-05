@@ -1,11 +1,12 @@
 import argparse
 import json 
-from indicators.vwap import calculate_moving_average,calculate_vwap
-from indicators.minmax import get_min_price,get_max_price
-from indicators.stats import median_price,std_dev,price_change_pct
+from src.indicators.vwap import calculate_moving_average,calculate_vwap
+from src.indicators.minmax import get_min_price,get_max_price
+from src.indicators.stats import median_price,std_dev,price_change_pct
 from datetime import datetime
 from collections import defaultdict
 from colorama import init, Style, Fore
+from src.plotting import plot_price_stats
 def floor_timestamp_to_window(ts: datetime, window: int) -> datetime:
     floored_minute = (ts.minute // window )* window 
     return ts.replace(minute= floored_minute, second = 0 ,microsecond = 0)
@@ -18,7 +19,7 @@ parser.add_argument('--vwap',action = 'store_true',help = 'Calculate the volume 
 parser.add_argument('--min',action = 'store_true',help = 'Get minimum value')
 parser.add_argument('--max',action = 'store_true', help = 'Get maximum vallue')
 parser.add_argument('--stats',type = str , default = None ,help = "Get the median,deviation and change in percent")
-
+parser.add_argument('--plot', action = 'store_true', help = 'Generate a line chart of prices and stats')
 args = parser.parse_args()
 print('File:', args.file)
 print('Symbol:', args.symbol)
@@ -46,21 +47,27 @@ if len(filtered) < args.window:
 #calculate moving average
 ma = calculate_moving_average(filtered,args.window)
 #result
+raw_ma = []
 print(Fore.GREEN+f'\n{args.symbol} Moving averages (window = {args.window}):')
 for row in ma:
+    raw_ma.append((datetime.fromisoformat(row['timestamp']), row['moving_avg']))
     print(f'{row["timestamp"]} {row["moving_avg"]}')
 buckets = defaultdict(list)
+buckets_plot = defaultdict(list)
 for entry in filtered:
     # Parse the timestamp string to a datetime object
     ts = datetime.fromisoformat(entry['timestamp'])
     floored_time = floor_timestamp_to_window(ts, args.window)
     buckets[floored_time].append(entry)
+    buckets_plot[floored_time].append(entry['price'])
+if args.plot:
+    plot_price_stats(buckets_plot, args.symbol, raw_ma)
 if args.stats:
         stat_set = set(map(str.strip , args.stats.split(',')))
-invalid = [x for x in stat_set if x not in {'median','std','change'}]
-if invalid:
-    print(f"Invalid stat flag: {','.join(invalid)}")
-    exit()
+        invalid = [x for x in stat_set if x not in {'median','std','change'}]
+        if invalid:
+            print(f"Invalid stat flag: {','.join(invalid)}")
+            exit()
 for time_key in sorted(buckets):
     print(Style.BRIGHT+Fore.GREEN+f"\nTime Window: {time_key}")
     entries = buckets[time_key]
@@ -74,13 +81,14 @@ for time_key in sorted(buckets):
         max_price = get_max_price(entries)
         print(f'Maximum price for {args.symbol}: {max_price:.2f}')
     prices_stat = [entry['price'] for entry in entries]
-    try:
-        if 'median' in stat_set:
-            print(f"Median : {median_price(prices_stat):.2f}")
-        if 'std' in stat_set:
-            print(f"Standard deviation : {std_dev(prices_stat):.2f}")
-        if "change" in stat_set:
-            print(f'Percentage change : {price_change_pct(prices_stat):+.2f}%')
-    except ValueError as e:
-        print(Fore.RED + f'   Skipping stat: {e}')
+    if args.stats:
+        try:
+            if 'median' in stat_set:
+                print(f"Median : {median_price(prices_stat):.2f}")
+            if 'std' in stat_set:
+                print(f"Standard deviation : {std_dev(prices_stat):.2f}")
+            if "change" in stat_set:
+                print(f'Percentage change : {price_change_pct(prices_stat):+.2f}%')
+        except ValueError as e:
+            print(Fore.RED + f'   Skipping stat: {e}')
 
