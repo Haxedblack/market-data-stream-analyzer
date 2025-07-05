@@ -14,6 +14,9 @@ Built with `argparse`, clean code practices, and extensibility in mind.
 - 🪙 Find **Min** and **Max** prices per time bucket
 - 📊 Calculate statistical metrics:
   - `--stats median,std,change`
+- 🖼️ Generate price plots with:
+  - Average bucket price
+  - Moving average overlay (`--plot`)
 - 🎨 Color-coded CLI output with `colorama`
 - 🛠️ Built using `argparse` and clean modular structure
 
@@ -22,14 +25,16 @@ Built with `argparse`, clean code practices, and extensibility in mind.
 ## 🧪 Example Usage
 
 ```bash
-python src/main.py \
+python -m src.main \
   --file data/sample_data.json \
   --symbol AAPL \
-  --window 5 \
+  --window 3 \
   --vwap \
   --min \
   --max \
-  --stats median,std,change
+  --stats median,std,change \
+  --plot
+
 ```
 
 ### 📤 Sample Output
@@ -37,21 +42,23 @@ python src/main.py \
 ```
 File: data/sample_data.json
 Symbol: AAPL
-Window: 5
+Window: 3
 
-AAPL Moving averages (window = 5):
-2023-10-01T09:34:00 172.76
+AAPL Moving averages (window = 3):
+2023-10-01T09:32:40 101.17
 ...
 
 Time Window: 2023-10-01 09:30:00
-  VWAP for AAPL: 172.79
-  Minimum price for AAPL: 170.5
-  Maximum price for AAPL: 175.3
-  Median: 172.60
-  Standard deviation: 1.25
-  Percentage change: +0.68%
-```
+  VWAP for AAPL: 101.20
+  Minimum price for AAPL: 100.5
+  Maximum price for AAPL: 102.2
+  Median: 101.00
+  Standard deviation: 0.84
+  Percentage change: +1.02%
 
+```
+## A combined plot is saved to:
+output/plots/AAPL_combined_plot.png
 ---
 
 ## 📁 Project Structure
@@ -59,29 +66,28 @@ Time Window: 2023-10-01 09:30:00
 ```
 market-data-stream-analyzer/
 ├── data/                 # Raw or sample JSON input files
-├── output/               # (Optional) Result logs or plot images
+├── output/               # Auto-generated results (ignored in Git)
+│   └── plots/            # Plots created via --plot
 ├── src/                  # Main source code
 │   ├── main.py           # CLI entry point
+│   ├── plotting.py       # Matplotlib-based plot generator
 │   ├── indicators/       # VWAP, Moving Average, Min/Max, Stats
-│   ├── parser.py         # (Coming soon) Centralized CLI argument logic
-│   ├── analyzer.py       # (Coming soon) Modular analytics toolkit
+│   └── ...
 ├── requirements.txt      # Python dependencies
 ├── README.md             # This file
+└── .gitignore            # Excludes output, __pycache__, etc.
+
 ```
 
 ---
 
 ## 🔮 Coming Soon
 
-- [ ] 📊 Plotting support with `matplotlib`
-  - Price vs time
-  - Volume vs time
-  - Moving average overlay
-- [ ] 🧪 Volatility & advanced statistical metrics
-- [ ] 📉 Real-time stream support (via WebSocket)
-- [ ] 🧮 Strategy testing modules (e.g., SMA crossover)
-- [ ] 📤 CSV/Excel export of results
-- [ ] 📦 Packaged CLI tool (`pip install -e .` support)
+- 📉 Export analysis results to CSV/Excel (`--export`)
+- 📊 Volume & price plotting per symbol
+- 🧮 Strategy backtesting modules (e.g. SMA crossover)
+- 🌐 Live stream support (WebSocket or REST polling)
+- 📦 `pip install -e .` support for CLI install
 
 ---
 
