@@ -55,12 +55,9 @@ Time Window: 2023-10-01 09:30:00
   Median: 101.00
   Standard deviation: 0.84
   Percentage change: +1.02%
-
+  A combined plot is saved to:
+  output/plots/AAPL_combined_plot.png
 ```
-## A combined plot is saved to:
-output/plots/AAPL_combined_plot.png
----
-
 ## 📁 Project Structure
 
 ```
