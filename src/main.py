@@ -20,7 +20,9 @@ parser.add_argument('--min',action = 'store_true',help = 'Get minimum value')
 parser.add_argument('--max',action = 'store_true', help = 'Get maximum vallue')
 parser.add_argument('--stats',type = str , default = None ,help = "Get the median,deviation and change in percent")
 parser.add_argument('--plot', action = 'store_true', help = 'Generate a line chart of prices and stats')
+parser.add_argument('--export',type = str , help = 'Export per-bucket stats to CSV file')
 args = parser.parse_args()
+
 print('File:', args.file)
 print('Symbol:', args.symbol)
 print('Window:', args.window)
@@ -68,27 +70,44 @@ if args.stats:
         if invalid:
             print(f"Invalid stat flag: {','.join(invalid)}")
             exit()
+export_rows = []
 for time_key in sorted(buckets):
+    row_data = {'time': time_key}
     print(Style.BRIGHT+Fore.GREEN+f"\nTime Window: {time_key}")
     entries = buckets[time_key]
     if args.vwap:
         vwp = calculate_vwap(entries)
         print(f'VWAP for {args.symbol}: {vwp:.2f}')
+        row_data['vwp'] = vwp
     if args.min:
         min_price = get_min_price(entries)
         print(f'Minimum price for {args.symbol}: {min_price:.2f}')
+        row_data['min_price'] = min_price
     if args.max:
         max_price = get_max_price(entries)
         print(f'Maximum price for {args.symbol}: {max_price:.2f}')
+        row_data['max_price'] = max_price
     prices_stat = [entry['price'] for entry in entries]
     if args.stats:
         try:
             if 'median' in stat_set:
                 print(f"Median : {median_price(prices_stat):.2f}")
+                row_data['median'] = median_price(prices_stat)
             if 'std' in stat_set:
                 print(f"Standard deviation : {std_dev(prices_stat):.2f}")
-            if "change" in stat_set:
+                row_data['std'] = std_dev(prices_stat)
+            if "change" in stat_set: 
                 print(f'Percentage change : {price_change_pct(prices_stat):+.2f}%')
+                row_data['change'] = price_change_pct(prices_stat)
         except ValueError as e:
             print(Fore.RED + f'   Skipping stat: {e}')
-
+    export_rows.append(row_data)
+if args.export and export_rows:
+    from csv import DictWriter
+    fieldnames = export_rows[0].keys()
+    with open(args.export ,'w', newline='') as f:
+        writer = DictWriter(f, fieldnames = fieldnames)
+        writer.writeheader()
+        writer.writerows(export_rows)
+        
+    print(Fore.GREEN + f'\n Exported stats to {args.export}')
