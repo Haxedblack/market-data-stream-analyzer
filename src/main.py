@@ -28,7 +28,17 @@ def process_entry(entry, args, buckets, stat_set, writer):
     bucket_entries.append(entry)
     # 3. Calculate all requested stats for the updated bucket
     print(f"\n--- Updated Stats for Time Window: {floored_time} ---")
-    row_data = {'time': floored_time.isoformat()}
+    # Initialize all possible CSV columns to None to avoid missing key errors
+    row_data = {
+        'time': floored_time.isoformat(),
+        'vwap': None,
+        'min': None,
+        'max': None,
+        'median': None,
+        'std': None,
+        'change': None,
+        'volatility': None
+    }
     prices = [e['price'] for e in bucket_entries]
 
     if args.vwap:
@@ -88,6 +98,9 @@ args = parser.parse_args()
 print('File:', args.file)
 print('Symbol:', args.symbol)
 print('Window:', args.window)
+
+symbols_to_process = {s.strip.upper() for s in args.symbol.split(',')}
+print(f'Symbols to process: {','.join(symbols_to_process)}')
 if args.plot and not args.file:
     print("Error: Plotting requires an input file. Please use the --file argument.")
     sys.exit(1)
@@ -108,8 +121,7 @@ if args.export:
         csv_writer = None
 #loading file
 all_data = []
-buckets = defaultdict(list)
-buckets_plot = defaultdict(list)
+buckets = defaultdict(lambda: defaultdict(list))
 # --- Stat Flag Handling ---
 VALID_STATS = {'median', 'std', 'change'}
 stat_set = set() # Default to an empty set
@@ -134,7 +146,7 @@ if args.file:
         all_data = json.load(f)
     # Now, process each entry from the file
     for entry in all_data:
-        process_entry(entry, args, buckets, stat_set , csv_writer)
+        process_entry(entry, args, buckets, stat_set , csv_writer, symbols_to_process)
 else:
     # Logic for reading from a stream
     print("Listening to stdin stream... (Ctrl+C to stop)")
@@ -142,6 +154,6 @@ else:
         try:
             entry = json.loads(line)
             # Process each entry from the stream
-            process_entry(entry, args, buckets, stat_set, csv_writer)
+            process_entry(entry, args, buckets, stat_set, csv_writer, symbols_to_process)
         except (json.JSONDecodeError, KeyError):
             continue
