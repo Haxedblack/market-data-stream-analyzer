@@ -2,17 +2,78 @@ import argparse
 import json 
 from src.indicators.vwap import calculate_moving_average,calculate_vwap
 from src.indicators.minmax import get_min_price,get_max_price
-from src.indicators.stats import median_price,std_dev,price_change_pct
+from src.indicators.stats import median_price,std_dev,price_change_pct,calculate_volatility
 from datetime import datetime
 from collections import defaultdict
 from colorama import init, Style, Fore
 from src.plotting import plot_price_stats
+import sys
+import csv
 def floor_timestamp_to_window(ts: datetime, window: int) -> datetime:
     floored_minute = (ts.minute // window )* window 
     return ts.replace(minute= floored_minute, second = 0 ,microsecond = 0)
+
+def process_entry(entry, args, buckets, stat_set, writer):
+    """
+    Filters a single data entry, updates its bucket, and calculates/prints/exports stats.
+    """
+    # 1. Filter the entry to ensure it's the correct symbol
+    if entry.get('symbol') != args.symbol:
+        return  # Skip this entry if the symbol doesn't match
+
+    # 2. Add the entry to its corresponding time bucket
+    ts = datetime.fromisoformat(entry['timestamp'])
+    floored_time = floor_timestamp_to_window(ts, args.window)
+    bucket_entries = buckets[floored_time]
+    bucket_entries.append(entry)
+    # 3. Calculate all requested stats for the updated bucket
+    print(f"\n--- Updated Stats for Time Window: {floored_time} ---")
+    row_data = {'time': floored_time.isoformat()}
+    prices = [e['price'] for e in bucket_entries]
+
+    if args.vwap:
+        vwap = calculate_vwap(bucket_entries)
+        print(f"  VWAP: {vwap:.2f}")
+        row_data['vwap'] = vwap
+
+    if args.min:
+        min_price = get_min_price(bucket_entries)
+        print(f"  Min Price: {min_price:.2f}")
+        row_data['min'] = min_price
+
+    if args.max:
+        max_price = get_max_price(bucket_entries)
+        print(f"  Max Price: {max_price:.2f}")
+        row_data['max'] = max_price
+
+    if args.volatility:
+        vol = calculate_volatility(prices)
+        print(f"  Volatility: {vol:.2f}%")
+        row_data['volatility'] = vol
+
+    if args.stats:
+        try:
+            if 'median' in stat_set:
+                median = median_price(prices)
+                print(f"  Median: {median:.2f}")
+                row_data['median'] = median
+            if 'std' in stat_set:
+                std = std_dev(prices)
+                print(f"  Std Dev: {std:.2f}")
+                row_data['std'] = std
+            if 'change' in stat_set:
+                change = price_change_pct(prices)
+                print(f"  Change: {change:+.2f}%")
+                row_data['change'] = change
+        except ValueError:
+            pass # Silently ignore stat errors for small data sets
+
+    # 4. Write the results to the CSV file if exporting is enabled
+    if writer:
+        writer.writerow(row_data)
 init(autoreset= True)
 parser = argparse.ArgumentParser(description = "Market data Stream Analyzer")
-parser.add_argument('--file',type = str , required = True,help = 'Path to the JSON data file')
+parser.add_argument('--file',type = str , required = False,help = 'Path to the JSON data file')
 parser.add_argument('--symbol', type = str , required = True, help = 'Stock symbol to analyze')
 parser.add_argument('--window', type = int , default = 5 , help  = 'Time window in minutes')
 parser.add_argument('--vwap',action = 'store_true',help = 'Calculate the volume weighted average price')
@@ -21,93 +82,66 @@ parser.add_argument('--max',action = 'store_true', help = 'Get maximum vallue')
 parser.add_argument('--stats',type = str , default = None ,help = "Get the median,deviation and change in percent")
 parser.add_argument('--plot', action = 'store_true', help = 'Generate a line chart of prices and stats')
 parser.add_argument('--export',type = str , help = 'Export per-bucket stats to CSV file')
+parser.add_argument('--volatility',action = 'store_true', help = 'Calculate the price volatility per bucket')
 args = parser.parse_args()
 
 print('File:', args.file)
 print('Symbol:', args.symbol)
 print('Window:', args.window)
+if args.plot and not args.file:
+    print("Error: Plotting requires an input file. Please use the --file argument.")
+    sys.exit(1)
+csv_writer = None
+csv_file = None
+if args.export:
+    try:
+        # Open the file and keep it open
+        csv_file = open(args.export, 'w', newline='')
+        
+        # Define the full set of possible headers
+        fieldnames = ['time', 'vwap', 'min', 'max', 'median', 'std', 'change', 'volatility']
+        csv_writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        csv_writer.writeheader()
+    except IOError as e:
+        print(f"Error opening export file: {e}")
+        # We can choose to exit or just disable exporting
+        csv_writer = None
 #loading file
-with open(args.file,'r') as f:
-    all_data = json.load(f)
-#filtering
-filtered = []
-for entry in all_data:
-    if entry.get('symbol') == args.symbol:
-        if 'price' in entry:
-            filtered.append(entry)
-        else:
-             print(Fore.RED+" Skipping entry with missing 'price':", entry)
-if not filtered:
-    print(Fore.RED+f" No entries found for symbol '{args.symbol}' with valid price data.")
-    exit()
-
-if len(filtered) < args.window:
-    print(Fore.RED+f" Not enough data for symbol '{args.symbol}' to calculate a {args.window}-point moving average.")
-    print(Fore.RED+f" Only {len(filtered)} valid entries available.")
-    exit()
-
-#calculate moving average
-ma = calculate_moving_average(filtered,args.window)
-#result
-raw_ma = []
-print(Fore.GREEN+f'\n{args.symbol} Moving averages (window = {args.window}):')
-for row in ma:
-    raw_ma.append((datetime.fromisoformat(row['timestamp']), row['moving_avg']))
-    print(f'{row["timestamp"]} {row["moving_avg"]}')
+all_data = []
 buckets = defaultdict(list)
 buckets_plot = defaultdict(list)
-for entry in filtered:
-    # Parse the timestamp string to a datetime object
-    ts = datetime.fromisoformat(entry['timestamp'])
-    floored_time = floor_timestamp_to_window(ts, args.window)
-    buckets[floored_time].append(entry)
-    buckets_plot[floored_time].append(entry['price'])
-if args.plot:
-    plot_price_stats(buckets_plot, args.symbol, raw_ma)
+# --- Stat Flag Handling ---
+VALID_STATS = {'median', 'std', 'change'}
+stat_set = set() # Default to an empty set
+
 if args.stats:
-        stat_set = set(map(str.strip , args.stats.split(',')))
-        invalid = [x for x in stat_set if x not in {'median','std','change'}]
-        if invalid:
-            print(f"Invalid stat flag: {','.join(invalid)}")
-            exit()
-export_rows = []
-for time_key in sorted(buckets):
-    row_data = {'time': time_key}
-    print(Style.BRIGHT+Fore.GREEN+f"\nTime Window: {time_key}")
-    entries = buckets[time_key]
-    if args.vwap:
-        vwp = calculate_vwap(entries)
-        print(f'VWAP for {args.symbol}: {vwp:.2f}')
-        row_data['vwp'] = vwp
-    if args.min:
-        min_price = get_min_price(entries)
-        print(f'Minimum price for {args.symbol}: {min_price:.2f}')
-        row_data['min_price'] = min_price
-    if args.max:
-        max_price = get_max_price(entries)
-        print(f'Maximum price for {args.symbol}: {max_price:.2f}')
-        row_data['max_price'] = max_price
-    prices_stat = [entry['price'] for entry in entries]
-    if args.stats:
+    # Create a set from the user's comma-separated input
+    user_stats = set(map(str.strip, args.stats.split(',')))
+    
+    # Find any stats the user provided that are not in our valid list
+    invalid = user_stats - VALID_STATS
+    
+    if invalid:
+        print(f"Error: Invalid stat(s) provided: {', '.join(invalid)}")
+        sys.exit(1)
+    
+    # If we get here, all stats are valid
+    stat_set = user_stats
+if args.file:
+    # Logic for reading from a file
+    print(f"Reading from file: {args.file}")
+    with open(args.file, 'r') as f:
+        all_data = json.load(f)
+    # Now, process each entry from the file
+    for entry in all_data:
+        process_entry(entry, args, buckets, stat_set , csv_writer)
+else:
+    # Logic for reading from a stream
+    print("Listening to stdin stream... (Ctrl+C to stop)")
+    for line in sys.stdin:
         try:
-            if 'median' in stat_set:
-                print(f"Median : {median_price(prices_stat):.2f}")
-                row_data['median'] = median_price(prices_stat)
-            if 'std' in stat_set:
-                print(f"Standard deviation : {std_dev(prices_stat):.2f}")
-                row_data['std'] = std_dev(prices_stat)
-            if "change" in stat_set: 
-                print(f'Percentage change : {price_change_pct(prices_stat):+.2f}%')
-                row_data['change'] = price_change_pct(prices_stat)
-        except ValueError as e:
-            print(Fore.RED + f'   Skipping stat: {e}')
-    export_rows.append(row_data)
-if args.export and export_rows:
-    from csv import DictWriter
-    fieldnames = export_rows[0].keys()
-    with open(args.export ,'w', newline='') as f:
-        writer = DictWriter(f, fieldnames = fieldnames)
-        writer.writeheader()
-        writer.writerows(export_rows)
-        
-    print(Fore.GREEN + f'\n Exported stats to {args.export}')
+            entry = json.loads(line)
+            # Process each entry from the stream
+            process_entry(entry, args, buckets, stat_set, csv_writer)
+        except (json.JSONDecodeError, KeyError):
+            continue
