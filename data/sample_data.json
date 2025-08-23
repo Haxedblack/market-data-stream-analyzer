@@ -1,1202 +1,425 @@
 [
-  {
-    "timestamp":"2023-10-01T09:30:00",
-    "symbol":"TSLA",
-    "price":191.26,
-    "volume":17103
-  },
-  {
-    "timestamp":"2023-10-01T09:31:00",
-    "symbol":"AMZN",
-    "price":187.6,
-    "volume":13450
-  },
-  {
-    "timestamp":"2023-10-01T09:32:00",
-    "symbol":"MSFT",
-    "price":147.16,
-    "volume":2271
-  },
-  {
-    "timestamp":"2023-10-01T09:33:00",
-    "symbol":"AAPL",
-    "price":220.02,
-    "volume":13345
-  },
-  {
-    "timestamp":"2023-10-01T09:34:00",
-    "symbol":"MSFT",
-    "price":251.67,
-    "volume":10282
-  },
-  {
-    "timestamp":"2023-10-01T09:35:00",
-    "symbol":"AAPL",
-    "price":128.31,
-    "volume":1609
-  },
-  {
-    "timestamp":"2023-10-01T09:36:00",
-    "symbol":"AMZN",
-    "price":277.95,
-    "volume":11916
-  },
-  {
-    "timestamp":"2023-10-01T09:37:00",
-    "symbol":"AAPL",
-    "price":228.5,
-    "volume":11997
-  },
-  {
-    "timestamp":"2023-10-01T09:38:00",
-    "symbol":"MSFT",
-    "price":149.14,
-    "volume":17627
-  },
-  {
-    "timestamp":"2023-10-01T09:39:00",
-    "symbol":"MSFT",
-    "price":107.55,
-    "volume":2825
-  },
-  {
-    "timestamp":"2023-10-01T09:40:00",
-    "symbol":"AAPL",
-    "price":281.41,
-    "volume":3098
-  },
-  {
-    "timestamp":"2023-10-01T09:41:00",
-    "symbol":"AMZN",
-    "price":250.37,
-    "volume":7593
-  },
-  {
-    "timestamp":"2023-10-01T09:42:00",
-    "symbol":"GOOG",
-    "price":217.93,
-    "volume":1103
-  },
-  {
-    "timestamp":"2023-10-01T09:43:00",
-    "symbol":"AAPL",
-    "price":136.77,
-    "volume":18211
-  },
-  {
-    "timestamp":"2023-10-01T09:44:00",
-    "symbol":"MSFT",
-    "price":235.77,
-    "volume":19158
-  },
-  {
-    "timestamp":"2023-10-01T09:45:00",
-    "symbol":"AMZN",
-    "price":171.65,
-    "volume":19084
-  },
-  {
-    "timestamp":"2023-10-01T09:46:00",
-    "symbol":"GOOG",
-    "price":133.45,
-    "volume":13113
-  },
-  {
-    "timestamp":"2023-10-01T09:47:00",
-    "symbol":"AMZN",
-    "price":140.15,
-    "volume":14516
-  },
-  {
-    "timestamp":"2023-10-01T09:48:00",
-    "symbol":"MSFT",
-    "price":101.95,
-    "volume":5951
-  },
-  {
-    "timestamp":"2023-10-01T09:49:00",
-    "symbol":"AMZN",
-    "price":176.7,
-    "volume":10733
-  },
-  {
-    "timestamp":"2023-10-01T09:50:00",
-    "symbol":"AMZN",
-    "price":290.06,
-    "volume":10352
-  },
-  {
-    "timestamp":"2023-10-01T09:51:00",
-    "symbol":"GOOG",
-    "price":229.39,
-    "volume":12936
-  },
-  {
-    "timestamp":"2023-10-01T09:52:00",
-    "symbol":"AAPL",
-    "price":262.34,
-    "volume":4527
-  },
-  {
-    "timestamp":"2023-10-01T09:53:00",
-    "symbol":"GOOG",
-    "price":163.56,
-    "volume":18976
-  },
-  {
-    "timestamp":"2023-10-01T09:54:00",
-    "symbol":"TSLA",
-    "price":120.1,
-    "volume":13192
-  },
-  {
-    "timestamp":"2023-10-01T09:55:00",
-    "symbol":"AAPL",
-    "price":193.56,
-    "volume":5994
-  },
-  {
-    "timestamp":"2023-10-01T09:56:00",
-    "symbol":"GOOG",
-    "price":109.3,
-    "volume":19800
-  },
-  {
-    "timestamp":"2023-10-01T09:57:00",
-    "symbol":"MSFT",
-    "price":177.19,
-    "volume":9610
-  },
-  {
-    "timestamp":"2023-10-01T09:58:00",
-    "symbol":"GOOG",
-    "price":230.62,
-    "volume":17953
-  },
-  {
-    "timestamp":"2023-10-01T09:59:00",
-    "symbol":"GOOG",
-    "price":236.97,
-    "volume":12997
-  },
-  {
-    "timestamp":"2023-10-01T10:00:00",
-    "symbol":"GOOG",
-    "price":224.5,
-    "volume":7788
-  },
-  {
-    "timestamp":"2023-10-01T10:01:00",
-    "symbol":"MSFT",
-    "price":250.39,
-    "volume":4511
-  },
-  {
-    "timestamp":"2023-10-01T10:02:00",
-    "symbol":"GOOG",
-    "price":274.53,
-    "volume":6608
-  },
-  {
-    "timestamp":"2023-10-01T10:03:00",
-    "symbol":"GOOG",
-    "price":175.5,
-    "volume":3257
-  },
-  {
-    "timestamp":"2023-10-01T10:04:00",
-    "symbol":"AMZN",
-    "price":183.02,
-    "volume":1071
-  },
-  {
-    "timestamp":"2023-10-01T10:05:00",
-    "symbol":"MSFT",
-    "price":254.0,
-    "volume":7606
-  },
-  {
-    "timestamp":"2023-10-01T10:06:00",
-    "symbol":"TSLA",
-    "price":215.36,
-    "volume":12629
-  },
-  {
-    "timestamp":"2023-10-01T10:07:00",
-    "symbol":"AAPL",
-    "price":113.37,
-    "volume":3542
-  },
-  {
-    "timestamp":"2023-10-01T10:08:00",
-    "symbol":"TSLA",
-    "price":213.84,
-    "volume":15796
-  },
-  {
-    "timestamp":"2023-10-01T10:09:00",
-    "symbol":"TSLA",
-    "price":206.96,
-    "volume":2619
-  },
-  {
-    "timestamp":"2023-10-01T10:10:00",
-    "symbol":"GOOG",
-    "price":280.48,
-    "volume":13087
-  },
-  {
-    "timestamp":"2023-10-01T10:11:00",
-    "symbol":"MSFT",
-    "price":110.04,
-    "volume":8301
-  },
-  {
-    "timestamp":"2023-10-01T10:12:00",
-    "symbol":"GOOG",
-    "price":272.6,
-    "volume":3904
-  },
-  {
-    "timestamp":"2023-10-01T10:13:00",
-    "symbol":"MSFT",
-    "price":213.26,
-    "volume":11565
-  },
-  {
-    "timestamp":"2023-10-01T10:14:00",
-    "symbol":"MSFT",
-    "price":255.98,
-    "volume":17441
-  },
-  {
-    "timestamp":"2023-10-01T10:15:00",
-    "symbol":"GOOG",
-    "price":231.97,
-    "volume":2332
-  },
-  {
-    "timestamp":"2023-10-01T10:16:00",
-    "symbol":"TSLA",
-    "price":296.74,
-    "volume":17223
-  },
-  {
-    "timestamp":"2023-10-01T10:17:00",
-    "symbol":"TSLA",
-    "price":285.92,
-    "volume":8003
-  },
-  {
-    "timestamp":"2023-10-01T10:18:00",
-    "symbol":"MSFT",
-    "price":193.52,
-    "volume":17946
-  },
-  {
-    "timestamp":"2023-10-01T10:19:00",
-    "symbol":"AMZN",
-    "price":275.33,
-    "volume":3973
-  },
-  {
-    "timestamp":"2023-10-01T10:20:00",
-    "symbol":"MSFT",
-    "price":289.99,
-    "volume":18142
-  },
-  {
-    "timestamp":"2023-10-01T10:21:00",
-    "symbol":"MSFT",
-    "price":173.75,
-    "volume":3936
-  },
-  {
-    "timestamp":"2023-10-01T10:22:00",
-    "symbol":"AMZN",
-    "price":162.94,
-    "volume":2255
-  },
-  {
-    "timestamp":"2023-10-01T10:23:00",
-    "symbol":"GOOG",
-    "price":262.07,
-    "volume":4126
-  },
-  {
-    "timestamp":"2023-10-01T10:24:00",
-    "symbol":"GOOG",
-    "price":178.6,
-    "volume":10896
-  },
-  {
-    "timestamp":"2023-10-01T10:25:00",
-    "symbol":"AMZN",
-    "price":297.44,
-    "volume":13331
-  },
-  {
-    "timestamp":"2023-10-01T10:26:00",
-    "symbol":"AAPL",
-    "price":137.02,
-    "volume":1575
-  },
-  {
-    "timestamp":"2023-10-01T10:27:00",
-    "symbol":"AMZN",
-    "price":184.56,
-    "volume":14399
-  },
-  {
-    "timestamp":"2023-10-01T10:28:00",
-    "symbol":"TSLA",
-    "price":118.2,
-    "volume":18197
-  },
-  {
-    "timestamp":"2023-10-01T10:29:00",
-    "symbol":"AAPL",
-    "price":275.74,
-    "volume":12706
-  },
-  {
-    "timestamp":"2023-10-01T10:30:00",
-    "symbol":"AAPL",
-    "price":134.97,
-    "volume":2398
-  },
-  {
-    "timestamp":"2023-10-01T10:31:00",
-    "symbol":"AMZN",
-    "price":280.2,
-    "volume":13260
-  },
-  {
-    "timestamp":"2023-10-01T10:32:00",
-    "symbol":"MSFT",
-    "price":263.88,
-    "volume":19199
-  },
-  {
-    "timestamp":"2023-10-01T10:33:00",
-    "symbol":"GOOG",
-    "price":240.76,
-    "volume":3164
-  },
-  {
-    "timestamp":"2023-10-01T10:34:00",
-    "symbol":"GOOG",
-    "price":282.84,
-    "volume":3071
-  },
-  {
-    "timestamp":"2023-10-01T10:35:00",
-    "symbol":"GOOG",
-    "price":228.41,
-    "volume":19807
-  },
-  {
-    "timestamp":"2023-10-01T10:36:00",
-    "symbol":"MSFT",
-    "price":253.82,
-    "volume":17408
-  },
-  {
-    "timestamp":"2023-10-01T10:37:00",
-    "symbol":"TSLA",
-    "price":265.58,
-    "volume":19761
-  },
-  {
-    "timestamp":"2023-10-01T10:38:00",
-    "symbol":"GOOG",
-    "price":207.17,
-    "volume":3137
-  },
-  {
-    "timestamp":"2023-10-01T10:39:00",
-    "symbol":"TSLA",
-    "price":191.58,
-    "volume":1180
-  },
-  {
-    "timestamp":"2023-10-01T10:40:00",
-    "symbol":"AMZN",
-    "price":299.1,
-    "volume":3184
-  },
-  {
-    "timestamp":"2023-10-01T10:41:00",
-    "symbol":"TSLA",
-    "price":250.07,
-    "volume":11487
-  },
-  {
-    "timestamp":"2023-10-01T10:42:00",
-    "symbol":"AMZN",
-    "price":189.26,
-    "volume":17636
-  },
-  {
-    "timestamp":"2023-10-01T10:43:00",
-    "symbol":"GOOG",
-    "price":236.76,
-    "volume":14020
-  },
-  {
-    "timestamp":"2023-10-01T10:44:00",
-    "symbol":"TSLA",
-    "price":187.27,
-    "volume":10452
-  },
-  {
-    "timestamp":"2023-10-01T10:45:00",
-    "symbol":"GOOG",
-    "price":148.78,
-    "volume":4233
-  },
-  {
-    "timestamp":"2023-10-01T10:46:00",
-    "symbol":"MSFT",
-    "price":173.32,
-    "volume":17034
-  },
-  {
-    "timestamp":"2023-10-01T10:47:00",
-    "symbol":"MSFT",
-    "price":288.89,
-    "volume":4737
-  },
-  {
-    "timestamp":"2023-10-01T10:48:00",
-    "symbol":"AMZN",
-    "price":191.12,
-    "volume":15289
-  },
-  {
-    "timestamp":"2023-10-01T10:49:00",
-    "symbol":"TSLA",
-    "price":272.53,
-    "volume":19016
-  },
-  {
-    "timestamp":"2023-10-01T10:50:00",
-    "symbol":"MSFT",
-    "price":265.59,
-    "volume":8487
-  },
-  {
-    "timestamp":"2023-10-01T10:51:00",
-    "symbol":"MSFT",
-    "price":172.76,
-    "volume":14875
-  },
-  {
-    "timestamp":"2023-10-01T10:52:00",
-    "symbol":"TSLA",
-    "price":105.62,
-    "volume":18673
-  },
-  {
-    "timestamp":"2023-10-01T10:53:00",
-    "symbol":"TSLA",
-    "price":134.84,
-    "volume":17455
-  },
-  {
-    "timestamp":"2023-10-01T10:54:00",
-    "symbol":"TSLA",
-    "price":232.61,
-    "volume":12646
-  },
-  {
-    "timestamp":"2023-10-01T10:55:00",
-    "symbol":"AMZN",
-    "price":250.55,
-    "volume":4903
-  },
-  {
-    "timestamp":"2023-10-01T10:56:00",
-    "symbol":"AMZN",
-    "price":298.26,
-    "volume":15376
-  },
-  {
-    "timestamp":"2023-10-01T10:57:00",
-    "symbol":"GOOG",
-    "price":222.0,
-    "volume":18839
-  },
-  {
-    "timestamp":"2023-10-01T10:58:00",
-    "symbol":"MSFT",
-    "price":109.15,
-    "volume":6764
-  },
-  {
-    "timestamp":"2023-10-01T10:59:00",
-    "symbol":"MSFT",
-    "price":168.47,
-    "volume":11551
-  },
-  {
-    "timestamp":"2023-10-01T11:00:00",
-    "symbol":"MSFT",
-    "price":247.91,
-    "volume":9851
-  },
-  {
-    "timestamp":"2023-10-01T11:01:00",
-    "symbol":"AAPL",
-    "price":117.86,
-    "volume":16576
-  },
-  {
-    "timestamp":"2023-10-01T11:02:00",
-    "symbol":"AAPL",
-    "price":203.84,
-    "volume":9365
-  },
-  {
-    "timestamp":"2023-10-01T11:03:00",
-    "symbol":"AMZN",
-    "price":291.06,
-    "volume":12108
-  },
-  {
-    "timestamp":"2023-10-01T11:04:00",
-    "symbol":"AAPL",
-    "price":255.68,
-    "volume":4318
-  },
-  {
-    "timestamp":"2023-10-01T11:05:00",
-    "symbol":"GOOG",
-    "price":159.69,
-    "volume":10967
-  },
-  {
-    "timestamp":"2023-10-01T11:06:00",
-    "symbol":"GOOG",
-    "price":174.88,
-    "volume":8742
-  },
-  {
-    "timestamp":"2023-10-01T11:07:00",
-    "symbol":"TSLA",
-    "price":106.46,
-    "volume":6293
-  },
-  {
-    "timestamp":"2023-10-01T11:08:00",
-    "symbol":"AMZN",
-    "price":230.55,
-    "volume":2236
-  },
-  {
-    "timestamp":"2023-10-01T11:09:00",
-    "symbol":"AAPL",
-    "price":105.45,
-    "volume":5122
-  },
-  {
-    "timestamp":"2023-10-01T11:10:00",
-    "symbol":"AAPL",
-    "price":282.52,
-    "volume":16122
-  },
-  {
-    "timestamp":"2023-10-01T11:11:00",
-    "symbol":"GOOG",
-    "price":190.13,
-    "volume":6043
-  },
-  {
-    "timestamp":"2023-10-01T11:12:00",
-    "symbol":"AAPL",
-    "price":145.23,
-    "volume":6739
-  },
-  {
-    "timestamp":"2023-10-01T11:13:00",
-    "symbol":"AAPL",
-    "price":176.06,
-    "volume":10717
-  },
-  {
-    "timestamp":"2023-10-01T11:14:00",
-    "symbol":"AAPL",
-    "price":113.64,
-    "volume":10210
-  },
-  {
-    "timestamp":"2023-10-01T11:15:00",
-    "symbol":"MSFT",
-    "price":293.47,
-    "volume":7327
-  },
-  {
-    "timestamp":"2023-10-01T11:16:00",
-    "symbol":"GOOG",
-    "price":240.9,
-    "volume":8267
-  },
-  {
-    "timestamp":"2023-10-01T11:17:00",
-    "symbol":"GOOG",
-    "price":201.25,
-    "volume":5699
-  },
-  {
-    "timestamp":"2023-10-01T11:18:00",
-    "symbol":"TSLA",
-    "price":241.28,
-    "volume":15184
-  },
-  {
-    "timestamp":"2023-10-01T11:19:00",
-    "symbol":"TSLA",
-    "price":234.4,
-    "volume":1799
-  },
-  {
-    "timestamp":"2023-10-01T11:20:00",
-    "symbol":"AMZN",
-    "price":296.6,
-    "volume":15953
-  },
-  {
-    "timestamp":"2023-10-01T11:21:00",
-    "symbol":"TSLA",
-    "price":230.07,
-    "volume":12988
-  },
-  {
-    "timestamp":"2023-10-01T11:22:00",
-    "symbol":"AMZN",
-    "price":177.58,
-    "volume":9150
-  },
-  {
-    "timestamp":"2023-10-01T11:23:00",
-    "symbol":"AMZN",
-    "price":138.46,
-    "volume":7995
-  },
-  {
-    "timestamp":"2023-10-01T11:24:00",
-    "symbol":"GOOG",
-    "price":145.97,
-    "volume":11998
-  },
-  {
-    "timestamp":"2023-10-01T11:25:00",
-    "symbol":"GOOG",
-    "price":112.25,
-    "volume":6088
-  },
-  {
-    "timestamp":"2023-10-01T11:26:00",
-    "symbol":"MSFT",
-    "price":129.06,
-    "volume":5412
-  },
-  {
-    "timestamp":"2023-10-01T11:27:00",
-    "symbol":"MSFT",
-    "price":285.01,
-    "volume":6714
-  },
-  {
-    "timestamp":"2023-10-01T11:28:00",
-    "symbol":"GOOG",
-    "price":209.02,
-    "volume":10186
-  },
-  {
-    "timestamp":"2023-10-01T11:29:00",
-    "symbol":"TSLA",
-    "price":227.77,
-    "volume":9597
-  },
-  {
-    "timestamp":"2023-10-01T11:30:00",
-    "symbol":"MSFT",
-    "price":133.9,
-    "volume":11059
-  },
-  {
-    "timestamp":"2023-10-01T11:31:00",
-    "symbol":"MSFT",
-    "price":111.17,
-    "volume":7876
-  },
-  {
-    "timestamp":"2023-10-01T11:32:00",
-    "symbol":"GOOG",
-    "price":174.85,
-    "volume":7026
-  },
-  {
-    "timestamp":"2023-10-01T11:33:00",
-    "symbol":"MSFT",
-    "price":276.82,
-    "volume":7295
-  },
-  {
-    "timestamp":"2023-10-01T11:34:00",
-    "symbol":"MSFT",
-    "price":208.99,
-    "volume":8805
-  },
-  {
-    "timestamp":"2023-10-01T11:35:00",
-    "symbol":"GOOG",
-    "price":140.75,
-    "volume":7614
-  },
-  {
-    "timestamp":"2023-10-01T11:36:00",
-    "symbol":"MSFT",
-    "price":258.3,
-    "volume":5408
-  },
-  {
-    "timestamp":"2023-10-01T11:37:00",
-    "symbol":"AMZN",
-    "price":238.64,
-    "volume":11226
-  },
-  {
-    "timestamp":"2023-10-01T11:38:00",
-    "symbol":"AAPL",
-    "price":281.32,
-    "volume":14512
-  },
-  {
-    "timestamp":"2023-10-01T11:39:00",
-    "symbol":"AMZN",
-    "price":200.26,
-    "volume":11679
-  },
-  {
-    "timestamp":"2023-10-01T11:40:00",
-    "symbol":"MSFT",
-    "price":152.13,
-    "volume":15461
-  },
-  {
-    "timestamp":"2023-10-01T11:41:00",
-    "symbol":"AMZN",
-    "price":235.3,
-    "volume":3150
-  },
-  {
-    "timestamp":"2023-10-01T11:42:00",
-    "symbol":"GOOG",
-    "price":261.15,
-    "volume":17040
-  },
-  {
-    "timestamp":"2023-10-01T11:43:00",
-    "symbol":"MSFT",
-    "price":165.73,
-    "volume":12870
-  },
-  {
-    "timestamp":"2023-10-01T11:44:00",
-    "symbol":"GOOG",
-    "price":210.33,
-    "volume":10861
-  },
-  {
-    "timestamp":"2023-10-01T11:45:00",
-    "symbol":"AMZN",
-    "price":177.71,
-    "volume":14249
-  },
-  {
-    "timestamp":"2023-10-01T11:46:00",
-    "symbol":"AMZN",
-    "price":151.0,
-    "volume":2991
-  },
-  {
-    "timestamp":"2023-10-01T11:47:00",
-    "symbol":"MSFT",
-    "price":178.67,
-    "volume":13351
-  },
-  {
-    "timestamp":"2023-10-01T11:48:00",
-    "symbol":"AMZN",
-    "price":273.25,
-    "volume":7123
-  },
-  {
-    "timestamp":"2023-10-01T11:49:00",
-    "symbol":"TSLA",
-    "price":185.43,
-    "volume":10469
-  },
-  {
-    "timestamp":"2023-10-01T11:50:00",
-    "symbol":"AAPL",
-    "price":109.91,
-    "volume":2989
-  },
-  {
-    "timestamp":"2023-10-01T11:51:00",
-    "symbol":"MSFT",
-    "price":283.79,
-    "volume":19634
-  },
-  {
-    "timestamp":"2023-10-01T11:52:00",
-    "symbol":"AAPL",
-    "price":124.72,
-    "volume":3471
-  },
-  {
-    "timestamp":"2023-10-01T11:53:00",
-    "symbol":"TSLA",
-    "price":196.62,
-    "volume":17240
-  },
-  {
-    "timestamp":"2023-10-01T11:54:00",
-    "symbol":"GOOG",
-    "price":198.75,
-    "volume":6373
-  },
-  {
-    "timestamp":"2023-10-01T11:55:00",
-    "symbol":"MSFT",
-    "price":185.71,
-    "volume":1867
-  },
-  {
-    "timestamp":"2023-10-01T11:56:00",
-    "symbol":"AMZN",
-    "price":114.14,
-    "volume":4375
-  },
-  {
-    "timestamp":"2023-10-01T11:57:00",
-    "symbol":"MSFT",
-    "price":256.74,
-    "volume":18889
-  },
-  {
-    "timestamp":"2023-10-01T11:58:00",
-    "symbol":"AMZN",
-    "price":272.24,
-    "volume":4008
-  },
-  {
-    "timestamp":"2023-10-01T11:59:00",
-    "symbol":"MSFT",
-    "price":235.5,
-    "volume":14901
-  },
-  {
-    "timestamp":"2023-10-01T12:00:00",
-    "symbol":"MSFT",
-    "price":278.43,
-    "volume":6286
-  },
-  {
-    "timestamp":"2023-10-01T12:01:00",
-    "symbol":"TSLA",
-    "price":159.39,
-    "volume":4247
-  },
-  {
-    "timestamp":"2023-10-01T12:02:00",
-    "symbol":"TSLA",
-    "price":190.46,
-    "volume":17077
-  },
-  {
-    "timestamp":"2023-10-01T12:03:00",
-    "symbol":"MSFT",
-    "price":134.77,
-    "volume":3098
-  },
-  {
-    "timestamp":"2023-10-01T12:04:00",
-    "symbol":"TSLA",
-    "price":267.56,
-    "volume":11508
-  },
-  {
-    "timestamp":"2023-10-01T12:05:00",
-    "symbol":"AAPL",
-    "price":267.33,
-    "volume":12371
-  },
-  {
-    "timestamp":"2023-10-01T12:06:00",
-    "symbol":"MSFT",
-    "price":172.77,
-    "volume":4990
-  },
-  {
-    "timestamp":"2023-10-01T12:07:00",
-    "symbol":"MSFT",
-    "price":263.22,
-    "volume":1511
-  },
-  {
-    "timestamp":"2023-10-01T12:08:00",
-    "symbol":"AAPL",
-    "price":104.64,
-    "volume":19247
-  },
-  {
-    "timestamp":"2023-10-01T12:09:00",
-    "symbol":"TSLA",
-    "price":260.4,
-    "volume":1272
-  },
-  {
-    "timestamp":"2023-10-01T12:10:00",
-    "symbol":"GOOG",
-    "price":224.25,
-    "volume":19038
-  },
-  {
-    "timestamp":"2023-10-01T12:11:00",
-    "symbol":"TSLA",
-    "price":244.93,
-    "volume":16547
-  },
-  {
-    "timestamp":"2023-10-01T12:12:00",
-    "symbol":"AAPL",
-    "price":187.7,
-    "volume":14343
-  },
-  {
-    "timestamp":"2023-10-01T12:13:00",
-    "symbol":"AMZN",
-    "price":166.44,
-    "volume":9052
-  },
-  {
-    "timestamp":"2023-10-01T12:14:00",
-    "symbol":"GOOG",
-    "price":174.64,
-    "volume":16758
-  },
-  {
-    "timestamp":"2023-10-01T12:15:00",
-    "symbol":"GOOG",
-    "price":271.27,
-    "volume":7771
-  },
-  {
-    "timestamp":"2023-10-01T12:16:00",
-    "symbol":"AMZN",
-    "price":117.11,
-    "volume":3789
-  },
-  {
-    "timestamp":"2023-10-01T12:17:00",
-    "symbol":"TSLA",
-    "price":114.5,
-    "volume":3530
-  },
-  {
-    "timestamp":"2023-10-01T12:18:00",
-    "symbol":"AMZN",
-    "price":297.09,
-    "volume":5798
-  },
-  {
-    "timestamp":"2023-10-01T12:19:00",
-    "symbol":"AAPL",
-    "price":247.16,
-    "volume":11490
-  },
-  {
-    "timestamp":"2023-10-01T12:20:00",
-    "symbol":"AAPL",
-    "price":113.66,
-    "volume":1460
-  },
-  {
-    "timestamp":"2023-10-01T12:21:00",
-    "symbol":"TSLA",
-    "price":293.98,
-    "volume":9090
-  },
-  {
-    "timestamp":"2023-10-01T12:22:00",
-    "symbol":"GOOG",
-    "price":218.3,
-    "volume":5107
-  },
-  {
-    "timestamp":"2023-10-01T12:23:00",
-    "symbol":"AMZN",
-    "price":202.46,
-    "volume":6240
-  },
-  {
-    "timestamp":"2023-10-01T12:24:00",
-    "symbol":"AMZN",
-    "price":111.86,
-    "volume":11691
-  },
-  {
-    "timestamp":"2023-10-01T12:25:00",
-    "symbol":"AAPL",
-    "price":210.18,
-    "volume":14385
-  },
-  {
-    "timestamp":"2023-10-01T12:26:00",
-    "symbol":"AAPL",
-    "price":293.8,
-    "volume":12809
-  },
-  {
-    "timestamp":"2023-10-01T12:27:00",
-    "symbol":"GOOG",
-    "price":245.97,
-    "volume":7028
-  },
-  {
-    "timestamp":"2023-10-01T12:28:00",
-    "symbol":"MSFT",
-    "price":188.28,
-    "volume":3945
-  },
-  {
-    "timestamp":"2023-10-01T12:29:00",
-    "symbol":"AAPL",
-    "price":253.66,
-    "volume":8491
-  },
-  {
-    "timestamp":"2023-10-01T12:30:00",
-    "symbol":"TSLA",
-    "price":227.05,
-    "volume":1308
-  },
-  {
-    "timestamp":"2023-10-01T12:31:00",
-    "symbol":"AMZN",
-    "price":145.78,
-    "volume":3952
-  },
-  {
-    "timestamp":"2023-10-01T12:32:00",
-    "symbol":"GOOG",
-    "price":277.49,
-    "volume":1060
-  },
-  {
-    "timestamp":"2023-10-01T12:33:00",
-    "symbol":"TSLA",
-    "price":124.16,
-    "volume":15614
-  },
-  {
-    "timestamp":"2023-10-01T12:34:00",
-    "symbol":"GOOG",
-    "price":294.15,
-    "volume":2820
-  },
-  {
-    "timestamp":"2023-10-01T12:35:00",
-    "symbol":"GOOG",
-    "price":179.58,
-    "volume":1763
-  },
-  {
-    "timestamp":"2023-10-01T12:36:00",
-    "symbol":"AMZN",
-    "price":245.83,
-    "volume":19422
-  },
-  {
-    "timestamp":"2023-10-01T12:37:00",
-    "symbol":"AAPL",
-    "price":190.5,
-    "volume":5301
-  },
-  {
-    "timestamp":"2023-10-01T12:38:00",
-    "symbol":"AMZN",
-    "price":125.4,
-    "volume":1104
-  },
-  {
-    "timestamp":"2023-10-01T12:39:00",
-    "symbol":"TSLA",
-    "price":123.57,
-    "volume":19078
-  },
-  {
-    "timestamp":"2023-10-01T12:40:00",
-    "symbol":"MSFT",
-    "price":240.36,
-    "volume":8406
-  },
-  {
-    "timestamp":"2023-10-01T12:41:00",
-    "symbol":"MSFT",
-    "price":254.22,
-    "volume":1582
-  },
-  {
-    "timestamp":"2023-10-01T12:42:00",
-    "symbol":"AAPL",
-    "price":255.59,
-    "volume":9551
-  },
-  {
-    "timestamp":"2023-10-01T12:43:00",
-    "symbol":"TSLA",
-    "price":154.95,
-    "volume":10642
-  },
-  {
-    "timestamp":"2023-10-01T12:44:00",
-    "symbol":"AMZN",
-    "price":156.53,
-    "volume":16091
-  },
-  {
-    "timestamp":"2023-10-01T12:45:00",
-    "symbol":"GOOG",
-    "price":247.76,
-    "volume":19769
-  },
-  {
-    "timestamp":"2023-10-01T12:46:00",
-    "symbol":"AAPL",
-    "price":193.62,
-    "volume":11352
-  },
-  {
-    "timestamp":"2023-10-01T12:47:00",
-    "symbol":"AMZN",
-    "price":131.45,
-    "volume":3718
-  },
-  {
-    "timestamp":"2023-10-01T12:48:00",
-    "symbol":"AMZN",
-    "price":175.1,
-    "volume":12472
-  },
-  {
-    "timestamp":"2023-10-01T12:49:00",
-    "symbol":"GOOG",
-    "price":207.83,
-    "volume":9260
-  }
+{"timestamp": "2023-10-01T09:32:00", "symbol": "MSFT", "price": 147.16, "volume": 2271},
+{"timestamp": "2023-10-01T09:33:00", "symbol": "AAPL", "price": 220.02, "volume": 13345},
+{"timestamp": "2023-10-01T09:34:00", "symbol": "MSFT", "price": 251.67, "volume": 10282},
+{"timestamp": "2023-10-01T09:35:00", "symbol": "AAPL", "price": 128.31, "volume": 1609},
+{"timestamp": "2023-10-01T09:36:00", "symbol": "AMZN", "price": 277.95, "volume": 11916},
+{"timestamp": "2023-10-01T09:37:00", "symbol": "AAPL", "price": 228.5, "volume": 11997},
+{"timestamp": "2023-10-01T09:38:00", "symbol": "MSFT", "price": 149.14, "volume": 17627},
+{"timestamp": "2023-10-01T09:39:00", "symbol": "MSFT", "price": 107.55, "volume": 2825},
+{"timestamp": "2023-10-01T09:40:00", "symbol": "AAPL", "price": 281.41, "volume": 3098},
+{"timestamp": "2023-10-01T09:41:00", "symbol": "AMZN", "price": 250.37, "volume": 7593},
+{"timestamp": "2023-10-01T09:42:00", "symbol": "GOOG", "price": 217.93, "volume": 1103},
+{"timestamp": "2023-10-01T09:43:00", "symbol": "AAPL", "price": 136.77, "volume": 18211},
+{"timestamp": "2023-10-01T09:44:00", "symbol": "MSFT", "price": 235.77, "volume": 19158},
+{"timestamp": "2023-10-01T09:45:00", "symbol": "AMZN", "price": 171.65, "volume": 19084},
+{"timestamp": "2023-10-01T09:46:00", "symbol": "GOOG", "price": 133.45, "volume": 13113},
+{"timestamp": "2023-10-01T09:47:00", "symbol": "AMZN", "price": 140.15, "volume": 14516},
+{"timestamp": "2023-10-01T09:48:00", "symbol": "MSFT", "price": 101.95, "volume": 5951},
+{"timestamp": "2023-10-01T09:49:00", "symbol": "AMZN", "price": 176.7, "volume": 10733},
+{"timestamp": "2023-10-01T09:50:00", "symbol": "AMZN", "price": 290.06, "volume": 10352},
+{"timestamp": "2023-10-01T09:51:00", "symbol": "GOOG", "price": 229.39, "volume": 12936},
+{"timestamp": "2023-10-01T09:52:00", "symbol": "AAPL", "price": 262.34, "volume": 4527},
+{"timestamp": "2023-10-01T09:53:00", "symbol": "GOOG", "price": 163.56, "volume": 18976},
+{"timestamp": "2023-10-01T09:54:00", "symbol": "TSLA", "price": 120.1, "volume": 13192},
+{"timestamp": "2023-10-01T09:55:00", "symbol": "AAPL", "price": 193.56, "volume": 5994},
+{"timestamp": "2023-10-01T09:56:00", "symbol": "GOOG", "price": 109.3, "volume": 19800},
+{"timestamp": "2023-10-01T09:57:00", "symbol": "MSFT", "price": 177.19, "volume": 9610},
+{"timestamp": "2023-10-01T09:58:00", "symbol": "GOOG", "price": 230.62, "volume": 17953},
+{"timestamp": "2023-10-01T09:59:00", "symbol": "GOOG", "price": 236.97, "volume": 12997},
+{"timestamp": "2023-10-01T10:00:00", "symbol": "GOOG", "price": 224.5, "volume": 7788},
+{"timestamp": "2023-10-01T10:01:00", "symbol": "MSFT", "price": 250.39, "volume": 4511},
+{"timestamp": "2023-10-01T10:02:00", "symbol": "GOOG", "price": 274.53, "volume": 6608},
+{"timestamp": "2023-10-01T10:03:00", "symbol": "GOOG", "price": 175.5, "volume": 3257},
+{"timestamp": "2023-10-01T10:04:00", "symbol": "AMZN", "price": 183.02, "volume": 1071},
+{"timestamp": "2023-10-01T10:05:00", "symbol": "MSFT", "price": 254.0, "volume": 7606},
+{"timestamp": "2023-10-01T10:06:00", "symbol": "TSLA", "price": 215.36, "volume": 12629},
+{"timestamp": "2023-10-01T10:07:00", "symbol": "AAPL", "price": 113.37, "volume": 3542},
+{"timestamp": "2023-10-01T10:08:00", "symbol": "TSLA", "price": 213.84, "volume": 15796},
+{"timestamp": "2023-10-01T10:09:00", "symbol": "TSLA", "price": 206.96, "volume": 2619},
+{"timestamp": "2023-10-01T10:10:00", "symbol": "GOOG", "price": 280.48, "volume": 13087},
+{"timestamp": "2023-10-01T10:11:00", "symbol": "MSFT", "price": 110.04, "volume": 8301},
+{"timestamp": "2023-10-01T10:12:00", "symbol": "GOOG", "price": 272.6, "volume": 3904},
+{"timestamp": "2023-10-01T10:13:00", "symbol": "MSFT", "price": 213.26, "volume": 11565},
+{"timestamp": "2023-10-01T10:14:00", "symbol": "MSFT", "price": 255.98, "volume": 17441},
+{"timestamp": "2023-10-01T10:15:00", "symbol": "GOOG", "price": 231.97, "volume": 2332},
+{"timestamp": "2023-10-01T10:16:00", "symbol": "TSLA", "price": 296.74, "volume": 17223},
+{"timestamp": "2023-10-01T10:17:00", "symbol": "TSLA", "price": 285.92, "volume": 8003},
+{"timestamp": "2023-10-01T10:18:00", "symbol": "MSFT", "price": 193.52, "volume": 17946},
+{"timestamp": "2023-10-01T10:19:00", "symbol": "AMZN", "price": 275.33, "volume": 3973},
+{"timestamp": "2023-10-01T10:20:00", "symbol": "MSFT", "price": 289.99, "volume": 18142},
+{"timestamp": "2023-10-01T10:21:00", "symbol": "MSFT", "price": 173.75, "volume": 3936},
+{"timestamp": "2023-10-01T10:22:00", "symbol": "AMZN", "price": 162.94, "volume": 2255},
+{"timestamp": "2023-10-01T10:23:00", "symbol": "GOOG", "price": 262.07, "volume": 4126},
+{"timestamp": "2023-10-01T10:24:00", "symbol": "GOOG", "price": 178.6, "volume": 10896},
+{"timestamp": "2023-10-01T10:25:00", "symbol": "AMZN", "price": 297.44, "volume": 13331},
+{"timestamp": "2023-10-01T10:26:00", "symbol": "AAPL", "price": 137.02, "volume": 1575},
+{"timestamp": "2023-10-01T10:27:00", "symbol": "AMZN", "price": 184.56, "volume": 14399},
+{"timestamp": "2023-10-01T10:28:00", "symbol": "TSLA", "price": 118.2, "volume": 18197},
+{"timestamp": "2023-10-01T10:29:00", "symbol": "AAPL", "price": 275.74, "volume": 12706},
+{"timestamp": "2023-10-01T10:30:00", "symbol": "AAPL", "price": 134.97, "volume": 2398},
+{"timestamp": "2023-10-01T10:31:00", "symbol": "AMZN", "price": 280.2, "volume": 13260},
+{"timestamp": "2023-10-01T10:32:00", "symbol": "MSFT", "price": 263.88, "volume": 19199},
+{"timestamp": "2023-10-01T10:33:00", "symbol": "GOOG", "price": 240.76, "volume": 3164},
+{"timestamp": "2023-10-01T10:34:00", "symbol": "GOOG", "price": 282.84, "volume": 3071},
+{"timestamp": "2023-10-01T10:35:00", "symbol": "GOOG", "price": 228.41, "volume": 19807},
+{"timestamp": "2023-10-01T10:36:00", "symbol": "MSFT", "price": 253.82, "volume": 17408},
+{"timestamp": "2023-10-01T10:37:00", "symbol": "TSLA", "price": 265.58, "volume": 19761},
+{"timestamp": "2023-10-01T10:38:00", "symbol": "GOOG", "price": 207.17, "volume": 3137},
+{"timestamp": "2023-10-01T10:39:00", "symbol": "TSLA", "price": 191.58, "volume": 1180},
+{"timestamp": "2023-10-01T10:40:00", "symbol": "AMZN", "price": 299.1, "volume": 3184},
+{"timestamp": "2023-10-01T10:41:00", "symbol": "TSLA", "price": 250.07, "volume": 11487},
+{"timestamp": "2023-10-01T10:42:00", "symbol": "AMZN", "price": 189.26, "volume": 17636},
+{"timestamp": "2023-10-01T10:43:00", "symbol": "GOOG", "price": 236.76, "volume": 14020},
+{"timestamp": "2023-10-01T10:44:00", "symbol": "TSLA", "price": 187.27, "volume": 10452},
+{"timestamp": "2023-10-01T10:45:00", "symbol": "GOOG", "price": 148.78, "volume": 4233},
+{"timestamp": "2023-10-01T10:46:00", "symbol": "MSFT", "price": 173.32, "volume": 17034},
+{"timestamp": "2023-10-01T10:47:00", "symbol": "MSFT", "price": 288.89, "volume": 4737},
+{"timestamp": "2023-10-01T10:48:00", "symbol": "AMZN", "price": 191.12, "volume": 15289},
+{"timestamp": "2023-10-01T10:49:00", "symbol": "TSLA", "price": 272.53, "volume": 19016},
+{"timestamp": "2023-10-01T10:50:00", "symbol": "MSFT", "price": 265.59, "volume": 8487},
+{"timestamp": "2023-10-01T10:51:00", "symbol": "MSFT", "price": 172.76, "volume": 14875},
+{"timestamp": "2023-10-01T10:52:00", "symbol": "TSLA", "price": 105.62, "volume": 18673},
+{"timestamp": "2023-10-01T10:53:00", "symbol": "TSLA", "price": 134.84, "volume": 17455},
+{"timestamp": "2023-10-01T10:54:00", "symbol": "TSLA", "price": 232.61, "volume": 12646},
+{"timestamp": "2023-10-01T10:55:00", "symbol": "AMZN", "price": 250.55, "volume": 4903},
+{"timestamp": "2023-10-01T10:56:00", "symbol": "AMZN", "price": 298.26, "volume": 15376},
+{"timestamp": "2023-10-01T10:57:00", "symbol": "GOOG", "price": 222.0, "volume": 18839},
+{"timestamp": "2023-10-01T10:58:00", "symbol": "MSFT", "price": 109.15, "volume": 6764},
+{"timestamp": "2023-10-01T10:59:00", "symbol": "MSFT", "price": 168.47, "volume": 11551},
+{"timestamp": "2023-10-01T11:00:00", "symbol": "MSFT", "price": 247.91, "volume": 9851},
+{"timestamp": "2023-10-01T11:01:00", "symbol": "AAPL", "price": 117.86, "volume": 16576},
+{"timestamp": "2023-10-01T11:02:00", "symbol": "AAPL", "price": 203.84, "volume": 9365},
+{"timestamp": "2023-10-01T11:03:00", "symbol": "AMZN", "price": 291.06, "volume": 12108},
+{"timestamp": "2023-10-01T11:04:00", "symbol": "AAPL", "price": 255.68, "volume": 4318},
+{"timestamp": "2023-10-01T11:05:00", "symbol": "GOOG", "price": 159.69, "volume": 10967},
+{"timestamp": "2023-10-01T11:06:00", "symbol": "GOOG", "price": 174.88, "volume": 8742},
+{"timestamp": "2023-10-01T11:07:00", "symbol": "TSLA", "price": 106.46, "volume": 6293},
+{"timestamp": "2023-10-01T11:08:00", "symbol": "AMZN", "price": 230.55, "volume": 2236},
+{"timestamp": "2023-10-01T11:09:00", "symbol": "AAPL", "price": 105.45, "volume": 5122},
+{"timestamp": "2023-10-01T11:10:00", "symbol": "AAPL", "price": 282.52, "volume": 16122},
+{"timestamp": "2023-10-01T11:11:00", "symbol": "GOOG", "price": 190.13, "volume": 6043},
+{"timestamp": "2023-10-01T11:12:00", "symbol": "AAPL", "price": 145.23, "volume": 6739},
+{"timestamp": "2023-10-01T11:13:00", "symbol": "AAPL", "price": 176.06, "volume": 10717},
+{"timestamp": "2023-10-01T11:14:00", "symbol": "AAPL", "price": 113.64, "volume": 10210},
+{"timestamp": "2023-10-01T11:15:00", "symbol": "MSFT", "price": 293.47, "volume": 7327},
+{"timestamp": "2023-10-01T11:16:00", "symbol": "GOOG", "price": 240.9, "volume": 8267},
+{"timestamp": "2023-10-01T11:17:00", "symbol": "GOOG", "price": 201.25, "volume": 5699},
+{"timestamp": "2023-10-01T11:18:00", "symbol": "TSLA", "price": 241.28, "volume": 15184},
+{"timestamp": "2023-10-01T11:19:00", "symbol": "TSLA", "price": 234.4, "volume": 1799},
+{"timestamp": "2023-10-01T11:20:00", "symbol": "AMZN", "price": 296.6, "volume": 15953},
+{"timestamp": "2023-10-01T11:21:00", "symbol": "TSLA", "price": 230.07, "volume": 12988},
+{"timestamp": "2023-10-01T11:22:00", "symbol": "AMZN", "price": 177.58, "volume": 9150},
+{"timestamp": "2023-10-01T11:23:00", "symbol": "AMZN", "price": 138.46, "volume": 7995},
+{"timestamp": "2023-10-01T11:24:00", "symbol": "GOOG", "price": 145.97, "volume": 11998},
+{"timestamp": "2023-10-01T11:25:00", "symbol": "GOOG", "price": 112.25, "volume": 6088},
+{"timestamp": "2023-10-01T11:26:00", "symbol": "MSFT", "price": 129.06, "volume": 5412},
+{"timestamp": "2023-10-01T11:27:00", "symbol": "MSFT", "price": 285.01, "volume": 6714},
+{"timestamp": "2023-10-01T11:28:00", "symbol": "GOOG", "price": 209.02, "volume": 10186},
+{"timestamp": "2023-10-01T11:29:00", "symbol": "TSLA", "price": 227.77, "volume": 9597},
+{"timestamp": "2023-10-01T11:30:00", "symbol": "MSFT", "price": 133.9, "volume": 11059},
+{"timestamp": "2023-10-01T11:31:00", "symbol": "MSFT", "price": 111.17, "volume": 7876},
+{"timestamp": "2023-10-01T11:32:00", "symbol": "GOOG", "price": 174.85, "volume": 7026},
+{"timestamp": "2023-10-01T11:33:00", "symbol": "MSFT", "price": 276.82, "volume": 7295},
+{"timestamp": "2023-10-01T11:34:00", "symbol": "MSFT", "price": 208.99, "volume": 8805},
+{"timestamp": "2023-10-01T11:35:00", "symbol": "GOOG", "price": 140.75, "volume": 7614},
+{"timestamp": "2023-10-01T11:36:00", "symbol": "MSFT", "price": 258.3, "volume": 5408},
+{"timestamp": "2023-10-01T11:37:00", "symbol": "AMZN", "price": 238.64, "volume": 11226},
+{"timestamp": "2023-10-01T11:38:00", "symbol": "AAPL", "price": 281.32, "volume": 14512},
+{"timestamp": "2023-10-01T11:39:00", "symbol": "AMZN", "price": 200.26, "volume": 11679},
+{"timestamp": "2023-10-01T11:40:00", "symbol": "MSFT", "price": 152.13, "volume": 15461},
+{"timestamp": "2023-10-01T11:41:00", "symbol": "AMZN", "price": 235.3, "volume": 3150},
+{"timestamp": "2023-10-01T11:42:00", "symbol": "GOOG", "price": 261.15, "volume": 17040},
+{"timestamp": "2023-10-01T11:43:00", "symbol": "MSFT", "price": 165.73, "volume": 12870},
+{"timestamp": "2023-10-01T11:44:00", "symbol": "GOOG", "price": 210.33, "volume": 10861},
+{"timestamp": "2023-10-01T11:45:00", "symbol": "AMZN", "price": 177.71, "volume": 14249},
+{"timestamp": "2023-10-01T11:46:00", "symbol": "AMZN", "price": 151.0, "volume": 2991},
+{"timestamp": "2023-10-01T11:47:00", "symbol": "MSFT", "price": 178.67, "volume": 13351},
+{"timestamp": "2023-10-01T11:48:00", "symbol": "AMZN", "price": 273.25, "volume": 7123},
+{"timestamp": "2023-10-01T11:49:00", "symbol": "TSLA", "price": 185.43, "volume": 10469},
+{"timestamp": "2023-10-01T11:50:00", "symbol": "AAPL", "price": 109.91, "volume": 2989},
+{"timestamp": "2023-10-01T11:51:00", "symbol": "MSFT", "price": 283.79, "volume": 19634},
+{"timestamp": "2023-10-01T11:52:00", "symbol": "AAPL", "price": 124.72, "volume": 3471},
+{"timestamp": "2023-10-01T11:53:00", "symbol": "TSLA", "price": 196.62, "volume": 17240},
+{"timestamp": "2023-10-01T11:54:00", "symbol": "GOOG", "price": 198.75, "volume": 6373},
+{"timestamp": "2023-10-01T11:55:00", "symbol": "MSFT", "price": 185.71, "volume": 1867},
+{"timestamp": "2023-10-01T11:56:00", "symbol": "AMZN", "price": 114.14, "volume": 4375},
+{"timestamp": "2023-10-01T11:57:00", "symbol": "MSFT", "price": 256.74, "volume": 18889},
+{"timestamp": "2023-10-01T11:58:00", "symbol": "AMZN", "price": 272.24, "volume": 4008},
+{"timestamp": "2023-10-01T11:59:00", "symbol": "MSFT", "price": 235.5, "volume": 14901},
+{"timestamp": "2023-10-01T12:00:00", "symbol": "MSFT", "price": 278.43, "volume": 6286},
+{"timestamp": "2023-10-01T12:01:00", "symbol": "TSLA", "price": 159.39, "volume": 4247},
+{"timestamp": "2023-10-01T12:02:00", "symbol": "TSLA", "price": 190.46, "volume": 17077},
+{"timestamp": "2023-10-01T12:03:00", "symbol": "MSFT", "price": 134.77, "volume": 3098},
+{"timestamp": "2023-10-01T12:04:00", "symbol": "TSLA", "price": 267.56, "volume": 11508},
+{"timestamp": "2023-10-01T12:05:00", "symbol": "AAPL", "price": 267.33, "volume": 12371},
+{"timestamp": "2023-10-01T12:06:00", "symbol": "MSFT", "price": 172.77, "volume": 4990},
+{"timestamp": "2023-10-01T12:07:00", "symbol": "MSFT", "price": 263.22, "volume": 1511},
+{"timestamp": "2023-10-01T12:08:00", "symbol": "AAPL", "price": 104.64, "volume": 19247},
+{"timestamp": "2023-10-01T12:09:00", "symbol": "TSLA", "price": 260.4, "volume": 1272},
+{"timestamp": "2023-10-01T12:10:00", "symbol": "GOOG", "price": 224.25, "volume": 19038},
+{"timestamp": "2023-10-01T12:11:00", "symbol": "TSLA", "price": 244.93, "volume": 16547},
+{"timestamp": "2023-10-01T12:12:00", "symbol": "AAPL", "price": 187.7, "volume": 14343},
+{"timestamp": "2023-10-01T12:13:00", "symbol": "AMZN", "price": 166.44, "volume": 9052},
+{"timestamp": "2023-10-01T12:14:00", "symbol": "GOOG", "price": 174.64, "volume": 16758},
+{"timestamp": "2023-10-01T12:15:00", "symbol": "GOOG", "price": 271.27, "volume": 7771},
+{"timestamp": "2023-10-01T12:16:00", "symbol": "AMZN", "price": 117.11, "volume": 3789},
+{"timestamp": "2023-10-01T12:17:00", "symbol": "TSLA", "price": 114.5, "volume": 3530},
+{"timestamp": "2023-10-01T12:18:00", "symbol": "AMZN", "price": 297.09, "volume": 5798},
+{"timestamp": "2023-10-01T12:19:00", "symbol": "AAPL", "price": 247.16, "volume": 11490},
+{"timestamp": "2023-10-01T12:20:00", "symbol": "AAPL", "price": 113.66, "volume": 1460},
+{"timestamp": "2023-10-01T12:21:00", "symbol": "TSLA", "price": 293.98, "volume": 9090},
+{"timestamp": "2023-10-01T12:22:00", "symbol": "GOOG", "price": 218.3, "volume": 5107},
+{"timestamp": "2023-10-01T12:23:00", "symbol": "AMZN", "price": 202.46, "volume": 6240},
+{"timestamp": "2023-10-01T12:24:00", "symbol": "AMZN", "price": 111.86, "volume": 11691},
+{"timestamp": "2023-10-01T12:25:00", "symbol": "AAPL", "price": 210.18, "volume": 14385},
+{"timestamp": "2023-10-01T12:26:00", "symbol": "AAPL", "price": 293.8, "volume": 12809},
+{"timestamp": "2023-10-01T12:27:00", "symbol": "GOOG", "price": 245.97, "volume": 7028},
+{"timestamp": "2023-10-01T12:28:00", "symbol": "MSFT", "price": 188.28, "volume": 3945},
+{"timestamp": "2023-10-01T12:29:00", "symbol": "AAPL", "price": 253.66, "volume": 8491},
+{"timestamp": "2023-10-01T12:30:00", "symbol": "TSLA", "price": 227.05, "volume": 1308},
+{"timestamp": "2023-10-01T12:31:00", "symbol": "AMZN", "price": 145.78, "volume": 3952},
+{"timestamp": "2023-10-01T12:32:00", "symbol": "GOOG", "price": 277.49, "volume": 1060},
+{"timestamp": "2023-10-01T12:33:00", "symbol": "TSLA", "price": 124.16, "volume": 15614},
+{"timestamp": "2023-10-01T12:34:00", "symbol": "GOOG", "price": 294.15, "volume": 2820},
+{"timestamp": "2023-10-01T12:35:00", "symbol": "GOOG", "price": 179.58, "volume": 1763},
+{"timestamp": "2023-10-01T12:36:00", "symbol": "AMZN", "price": 245.83, "volume": 19422},
+{"timestamp": "2023-10-01T12:37:00", "symbol": "AAPL", "price": 190.5, "volume": 5301},
+{"timestamp": "2023-10-01T12:38:00", "symbol": "AMZN", "price": 125.4, "volume": 1104},
+{"timestamp": "2023-10-01T12:39:00", "symbol": "TSLA", "price": 123.57, "volume": 19078},
+{"timestamp": "2023-10-01T12:40:00", "symbol": "MSFT", "price": 240.36, "volume": 8406},
+{"timestamp": "2023-10-01T12:41:00", "symbol": "MSFT", "price": 254.22, "volume": 1582},
+{"timestamp": "2023-10-01T12:42:00", "symbol": "AAPL", "price": 255.59, "volume": 9551},
+{"timestamp": "2023-10-01T12:43:00", "symbol": "TSLA", "price": 154.95, "volume": 10642},
+{"timestamp": "2023-10-01T12:44:00", "symbol": "AMZN", "price": 156.53, "volume": 16091},
+{"timestamp": "2023-10-01T12:45:00", "symbol": "GOOG", "price": 247.76, "volume": 19769},
+{"timestamp": "2023-10-01T12:46:00", "symbol": "AAPL", "price": 193.62, "volume": 11352},
+{"timestamp": "2023-10-01T12:47:00", "symbol": "AMZN", "price": 131.45, "volume": 3718},
+{"timestamp": "2023-10-01T12:48:00", "symbol": "AMZN", "price": 175.1, "volume": 12472},
+{"timestamp": "2023-10-01T12:49:00", "symbol": "GOOG", "price": 207.83, "volume": 9260},
+{"timestamp":"2025-08-25T09:30:11","symbol":"MSFT","price":309.91,"volume":14639},
+{"timestamp":"2025-08-25T09:30:18","symbol":"AMZN","price":139.99,"volume":18804},
+{"timestamp":"2025-08-25T09:30:31","symbol":"TSLA","price":250.71,"volume":17588},
+{"timestamp":"2025-08-25T09:30:35","symbol":"TSLA","price":250.62,"volume":11736},
+{"timestamp":"2025-08-25T09:30:46","symbol":"GOOG","price":155.13,"volume":9889},
+{"timestamp":"2025-08-25T09:30:58","symbol":"AAPL","price":180.45,"volume":7386},
+{"timestamp":"2025-08-25T09:31:02","symbol":"AAPL","price":180.61,"volume":10452},
+{"timestamp":"2025-08-25T09:31:07","symbol":"AMZN","price":140.02,"volume":3935},
+{"timestamp":"2025-08-25T09:31:14","symbol":"AMZN","price":140.13,"volume":6078},
+{"timestamp":"2025-08-25T09:31:22","symbol":"AAPL","price":180.64,"volume":8254},
+{"timestamp":"2025-08-25T09:31:28","symbol":"AMZN","price":140.23,"volume":7331},
+{"timestamp":"2025-08-25T09:31:36","symbol":"AMZN","price":140.24,"volume":14957},
+{"timestamp":"2025-08-25T09:31:48","symbol":"MSFT","price":309.97,"volume":7371},
+{"timestamp":"2025-08-25T09:31:54","symbol":"TSLA","price":250.62,"volume":1239},
+{"timestamp":"2025-08-25T09:32:03","symbol":"AMZN","price":140.18,"volume":1408},
+{"timestamp":"2025-08-25T09:32:18","symbol":"AAPL","price":180.70,"volume":12871},
+{"timestamp":"2025-08-25T09:32:25","symbol":"AMZN","price":140.29,"volume":1678},
+{"timestamp":"2025-08-25T09:32:28","symbol":"GOOG","price":155.08,"volume":3770},
+{"timestamp":"2025-08-25T09:32:38","symbol":"GOOG","price":155.20,"volume":19456},
+{"timestamp":"2025-08-25T09:32:51","symbol":"TSLA","price":250.77,"volume":10839},
+{"timestamp":"2025-08-25T09:33:00","symbol":"AMZN","price":140.27,"volume":14917},
+{"timestamp":"2025-08-25T09:33:14","symbol":"MSFT","price":309.68,"volume":12316},
+{"timestamp":"2025-08-25T09:33:23","symbol":"AMZN","price":140.13,"volume":18274},
+{"timestamp":"2025-08-25T09:33:36","symbol":"GOOG","price":155.33,"volume":13444},
+{"timestamp":"2025-08-25T09:33:48","symbol":"AAPL","price":180.77,"volume":3092},
+{"timestamp":"2025-08-25T09:33:51","symbol":"TSLA","price":250.99,"volume":3024},
+{"timestamp":"2025-08-25T09:34:06","symbol":"GOOG","price":155.43,"volume":9022},
+{"timestamp":"2025-08-25T09:34:10","symbol":"MSFT","price":309.56,"volume":13840},
+{"timestamp":"2025-08-25T09:34:25","symbol":"AAPL","price":180.70,"volume":18805},
+{"timestamp":"2025-08-25T09:34:39","symbol":"TSLA","price":250.92,"volume":15516},
+{"timestamp":"2025-08-25T09:34:49","symbol":"MSFT","price":309.53,"volume":8250},
+{"timestamp":"2025-08-25T09:34:55","symbol":"TSLA","price":250.68,"volume":1758},
+{"timestamp":"2025-08-25T09:35:01","symbol":"AAPL","price":180.59,"volume":12586},
+{"timestamp":"2025-08-25T09:35:10","symbol":"GOOG","price":155.33,"volume":16075},
+{"timestamp":"2025-08-25T09:35:14","symbol":"TSLA","price":250.65,"volume":1335},
+{"timestamp":"2025-08-25T09:35:18","symbol":"GOOG","price":155.22,"volume":16259},
+{"timestamp":"2025-08-25T09:35:25","symbol":"GOOG","price":155.22,"volume":16480},
+{"timestamp":"2025-08-25T09:35:40","symbol":"MSFT","price":309.57,"volume":15502},
+{"timestamp":"2025-08-25T09:35:42","symbol":"TSLA","price":250.72,"volume":19159},
+{"timestamp":"2025-08-25T09:35:50","symbol":"TSLA","price":250.73,"volume":13410},
+{"timestamp":"2025-08-25T09:35:54","symbol":"AMZN","price":140.23,"volume":5245},
+{"timestamp":"2025-08-25T09:36:00","symbol":"MSFT","price":309.30,"volume":3999},
+{"timestamp":"2025-08-25T09:36:13","symbol":"TSLA","price":250.97,"volume":11736},
+{"timestamp":"2025-08-25T09:36:26","symbol":"GOOG","price":155.36,"volume":11073},
+{"timestamp":"2025-08-25T09:36:31","symbol":"AAPL","price":180.54,"volume":8645},
+{"timestamp":"2025-08-25T09:36:36","symbol":"GOOG","price":155.25,"volume":12076},
+{"timestamp":"2025-08-25T09:36:44","symbol":"MSFT","price":309.20,"volume":8635},
+{"timestamp":"2025-08-25T09:36:58","symbol":"TSLA","price":251.04,"volume":1950},
+{"timestamp":"2025-08-25T09:37:07","symbol":"GOOG","price":155.15,"volume":17454},
+{"timestamp":"2025-08-25T09:37:11","symbol":"TSLA","price":250.85,"volume":16520},
+{"timestamp":"2025-08-25T09:37:25","symbol":"TSLA","price":250.90,"volume":10419},
+{"timestamp":"2025-08-25T09:37:39","symbol":"AAPL","price":180.37,"volume":13264},
+{"timestamp":"2025-08-25T09:37:54","symbol":"MSFT","price":309.28,"volume":14436},
+{"timestamp":"2025-08-25T09:38:08","symbol":"MSFT","price":309.22,"volume":10642},
+{"timestamp":"2025-08-25T09:38:15","symbol":"MSFT","price":309.43,"volume":18274},
+{"timestamp":"2025-08-25T09:38:23","symbol":"MSFT","price":309.36,"volume":9026},
+{"timestamp":"2025-08-25T09:38:31","symbol":"TSLA","price":250.66,"volume":5426},
+{"timestamp":"2025-08-25T09:38:32","symbol":"AAPL","price":180.19,"volume":14156},
+{"timestamp":"2025-08-25T09:38:38","symbol":"AMZN","price":140.23,"volume":13289},
+{"timestamp":"2025-08-25T09:38:43","symbol":"TSLA","price":250.60,"volume":13069},
+{"timestamp":"2025-08-25T09:38:48","symbol":"TSLA","price":250.41,"volume":19875},
+{"timestamp":"2025-08-25T09:39:03","symbol":"MSFT","price":309.52,"volume":19207},
+{"timestamp":"2025-08-25T09:39:09","symbol":"MSFT","price":309.18,"volume":14660},
+{"timestamp":"2025-08-25T09:39:13","symbol":"GOOG","price":155.06,"volume":15582},
+{"timestamp":"2025-08-25T09:39:27","symbol":"AMZN","price":140.26,"volume":16348},
+{"timestamp":"2025-08-25T09:39:35","symbol":"TSLA","price":250.31,"volume":12101},
+{"timestamp":"2025-08-25T09:39:46","symbol":"MSFT","price":309.27,"volume":8895},
+{"timestamp":"2025-08-25T09:39:55","symbol":"MSFT","price":309.21,"volume":10217},
+{"timestamp":"2025-08-25T09:40:08","symbol":"GOOG","price":155.09,"volume":12371},
+{"timestamp":"2025-08-25T09:40:17","symbol":"AAPL","price":180.20,"volume":12903},
+{"timestamp":"2025-08-25T09:40:24","symbol":"AMZN","price":140.16,"volume":18698},
+{"timestamp":"2025-08-25T09:40:35","symbol":"MSFT","price":309.47,"volume":7188},
+{"timestamp":"2025-08-25T09:40:48","symbol":"GOOG","price":155.19,"volume":3024},
+{"timestamp":"2025-08-25T09:40:53","symbol":"AAPL","price":180.31,"volume":3556},
+{"timestamp":"2025-08-25T09:40:57","symbol":"GOOG","price":155.05,"volume":12716},
+{"timestamp":"2025-08-25T09:41:00","symbol":"AAPL","price":180.45,"volume":18809},
+{"timestamp":"2025-08-25T09:41:07","symbol":"AMZN","price":140.18,"volume":17454},
+{"timestamp":"2025-08-25T09:41:15","symbol":"AAPL","price":180.37,"volume":11910},
+{"timestamp":"2025-08-25T09:41:25","symbol":"GOOG","price":154.91,"volume":19363},
+{"timestamp":"2025-08-25T09:41:35","symbol":"TSLA","price":250.15,"volume":14647},
+{"timestamp":"2025-08-25T09:41:40","symbol":"AMZN","price":140.32,"volume":17808},
+{"timestamp":"2025-08-25T09:41:55","symbol":"TSLA","price":249.95,"volume":7711},
+{"timestamp":"2025-08-25T09:41:59","symbol":"TSLA","price":249.70,"volume":5247},
+{"timestamp":"2025-08-25T09:42:04","symbol":"AMZN","price":140.23,"volume":14013},
+{"timestamp":"2025-08-25T09:42:19","symbol":"MSFT","price":309.56,"volume":4802},
+{"timestamp":"2025-08-25T09:42:25","symbol":"AAPL","price":180.36,"volume":19759},
+{"timestamp":"2025-08-25T09:42:31","symbol":"AAPL","price":180.44,"volume":8299},
+{"timestamp":"2025-08-25T09:42:38","symbol":"AAPL","price":180.41,"volume":10433},
+{"timestamp":"2025-08-25T09:42:47","symbol":"MSFT","price":309.30,"volume":12891},
+{"timestamp":"2025-08-25T09:42:51","symbol":"AAPL","price":180.52,"volume":3877},
+{"timestamp":"2025-08-25T09:43:05","symbol":"AMZN","price":140.10,"volume":18456},
+{"timestamp":"2025-08-25T09:43:17","symbol":"AAPL","price":180.25,"volume":4533},
+{"timestamp":"2025-08-25T09:43:24","symbol":"MSFT","price":309.05,"volume":12920},
+{"timestamp":"2025-08-25T09:43:29","symbol":"AMZN","price":140.06,"volume":18029},
+{"timestamp":"2025-08-25T09:43:35","symbol":"AMZN","price":139.92,"volume":14234},
+{"timestamp":"2025-08-25T09:43:45","symbol":"TSLA","price":249.68,"volume":17290},
+{"timestamp":"2025-08-25T09:43:56","symbol":"TSLA","price":249.49,"volume":15456},
+{"timestamp":"2025-08-25T09:44:03","symbol":"AMZN","price":139.78,"volume":18490},
+{"timestamp":"2025-08-25T09:44:13","symbol":"AMZN","price":139.69,"volume":1197},
+{"timestamp":"2025-08-25T09:44:27","symbol":"MSFT","price":309.09,"volume":14392},
+{"timestamp":"2025-08-25T09:44:42","symbol":"MSFT","price":308.82,"volume":18804},
+{"timestamp":"2025-08-25T09:44:54","symbol":"TSLA","price":249.57,"volume":1936},
+{"timestamp":"2025-08-25T09:44:58","symbol":"TSLA","price":249.62,"volume":12435},
+{"timestamp":"2025-08-25T09:45:06","symbol":"AAPL","price":180.37,"volume":13463},
+{"timestamp":"2025-08-25T09:45:10","symbol":"GOOG","price":154.91,"volume":12756},
+{"timestamp":"2025-08-25T09:45:25","symbol":"AAPL","price":180.44,"volume":8291},
+{"timestamp":"2025-08-25T09:45:30","symbol":"AMZN","price":139.63,"volume":1802},
+{"timestamp":"2025-08-25T09:45:35","symbol":"GOOG","price":154.77,"volume":4418},
+{"timestamp":"2025-08-25T09:45:41","symbol":"TSLA","price":249.82,"volume":11663},
+{"timestamp":"2025-08-25T09:45:48","symbol":"AAPL","price":180.52,"volume":10803},
+{"timestamp":"2025-08-25T09:45:52","symbol":"AAPL","price":180.38,"volume":16053},
+{"timestamp":"2025-08-25T09:46:04","symbol":"MSFT","price":308.83,"volume":1885},
+{"timestamp":"2025-08-25T09:46:17","symbol":"MSFT","price":308.66,"volume":11204},
+{"timestamp":"2025-08-25T09:46:31","symbol":"AAPL","price":180.46,"volume":5243},
+{"timestamp":"2025-08-25T09:46:39","symbol":"TSLA","price":249.77,"volume":15316},
+{"timestamp":"2025-08-25T09:46:43","symbol":"GOOG","price":154.78,"volume":17454},
+{"timestamp":"2025-08-25T09:46:57","symbol":"MSFT","price":308.81,"volume":18619},
+{"timestamp":"2025-08-25T09:47:04","symbol":"TSLA","price":249.69,"volume":5231},
+{"timestamp":"2025-08-25T09:47:11","symbol":"AMZN","price":139.54,"volume":2598},
+{"timestamp":"2025-08-25T09:47:18","symbol":"GOOG","price":154.91,"volume":19363},
+{"timestamp":"2025-08-25T09:47:22","symbol":"AMZN","price":139.46,"volume":15654},
+{"timestamp":"2025-08-25T09:47:28","symbol":"AAPL","price":180.45,"volume":1370},
+{"timestamp":"2025-08-25T09:47:35","symbol":"GOOG","price":154.91,"volume":19472},
+{"timestamp":"2025-08-25T09:47:49","symbol":"MSFT","price":308.57,"volume":10433},
+{"timestamp":"2025-08-25T09:47:59","symbol":"GOOG","price":154.79,"volume":11175},
+{"timestamp":"2025-08-25T09:48:06","symbol":"AMZN","price":139.40,"volume":3991},
+{"timestamp":"2025-08-25T09:48:15","symbol":"GOOG","price":154.80,"volume":14660},
+{"timestamp":"2025-08-25T09:48:21","symbol":"TSLA","price":249.80,"volume":5803},
+{"timestamp":"2025-08-25T09:48:28","symbol":"TSLA","price":249.92,"volume":11649},
+{"timestamp":"2025-08-25T09:48:33","symbol":"AMZN","price":139.29,"volume":15654},
+{"timestamp":"2025-08-25T09:48:47","symbol":"AAPL","price":180.29,"volume":12165},
+{"timestamp":"2025-08-25T09:48:58","symbol":"TSLA","price":249.77,"volume":16781},
+{"timestamp":"2025-08-25T09:49:09","symbol":"MSFT","price":308.62,"volume":9894},
+{"timestamp":"2025-08-25T09:49:18","symbol":"TSLA","price":249.84,"volume":8206},
+{"timestamp":"2025-08-25T09:49:25","symbol":"AMZN","price":139.19,"volume":8895},
+{"timestamp":"2025-08-25T09:49:33","symbol":"TSLA","price":249.90,"volume":17586},
+{"timestamp":"2025-08-25T09:49:38","symbol":"AMZN","price":139.31,"volume":12569},
+{"timestamp":"2025-08-25T09:49:47","symbol":"MSFT","price":308.66,"volume":10710},
+{"timestamp":"2025-08-25T09:49:55","symbol":"AMZN","price":139.44,"volume":11736},
+{"timestamp":"2025-08-25T09:50:06","symbol":"MSFT","price":308.56,"volume":11207},
+{"timestamp":"2025-08-25T09:50:18","symbol":"AAPL","price":180.14,"volume":3742},
+{"timestamp":"2025-08-25T09:50:23","symbol":"TSLA","price":250.04,"volume":11234},
+{"timestamp":"2025-08-25T09:50:27","symbol":"AMZN","price":139.37,"volume":14860},
+{"timestamp":"2025-08-25T09:50:41","symbol":"AAPL","price":180.09,"volume":10186},
+{"timestamp":"2025-08-25T09:50:52","symbol":"AMZN","price":139.24,"volume":1652},
+{"timestamp":"2025-08-25T09:51:00","symbol":"AMZN","price":139.09,"volume":17075},
+{"timestamp":"2025-08-25T09:51:11","symbol":"MSFT","price":308.49,"volume":13137},
+{"timestamp":"2025-08-25T09:51:24","symbol":"AMZN","price":139.09,"volume":10927},
+{"timestamp":"2025-08-25T09:51:30","symbol":"TSLA","price":249.87,"volume":13410},
+{"timestamp":"2025-08-25T09:51:34","symbol":"AMZN","price":138.98,"volume":13533},
+{"timestamp":"2025-08-25T09:51:43","symbol":"AMZN","price":139.06,"volume":9022},
+{"timestamp":"2025-08-25T09:51:57","symbol":"AAPL","price":180.12,"volume":13463},
+{"timestamp":"2025-08-25T09:52:03","symbol":"TSLA","price":249.72,"volume":19456},
+{"timestamp":"2025-08-25T09:52:11","symbol":"TSLA","price":249.62,"volume":12076},
+{"timestamp":"2025-08-25T09:52:21","symbol":"GOOG","price":154.91,"volume":14436},
+{"timestamp":"2025-08-25T09:52:25","symbol":"AMZN","price":139.02,"volume":8291},
+{"timestamp":"2025-08-25T09:52:40","symbol":"AMZN","price":139.11,"volume":1408},
+{"timestamp":"2025-08-25T09:52:47","symbol":"TSLA","price":249.62,"volume":10642},
+{"timestamp":"2025-08-25T09:52:54","symbol":"AMZN","price":139.12,"volume":17105},
+{"timestamp":"2025-08-25T09:53:07","symbol":"AMZN","price":139.19,"volume":5243},
+{"timestamp":"2025-08-25T09:53:14","symbol":"AMZN","price":139.31,"volume":11722},
+{"timestamp":"2025-08-25T09:53:23","symbol":"TSLA","price":249.52,"volume":11736},
+{"timestamp":"2025-08-25T09:53:28","symbol":"TSLA","price":249.59,"volume":19875},
+{"timestamp":"2025-08-25T09:53:43","symbol":"MSFT","price":308.23,"volume":12165},
+{"timestamp":"2025-08-25T09:53:48","symbol":"GOOG","price":154.94,"volume":8645},
+{"timestamp":"2025-08-25T09:53:57","symbol":"GOOG","price":154.91,"volume":19363},
+{"timestamp":"2025-08-25T09:54:02","symbol":"TSLA","price":249.46,"volume":9026},
+{"timestamp":"2025-08-25T09:54:15","symbol":"AAPL","price":180.08,"volume":10433},
+{"timestamp":"2025-08-25T09:54:19","symbol":"TSLA","price":249.43,"volume":14156},
+{"timestamp":"2025-08-25T09:54:26","symbol":"MSFT","price":308.38,"volume":10839},
+{"timestamp":"2025-08-25T09:54:35","symbol":"TSLA","price":249.67,"volume":15316},
+{"timestamp":"2025-08-25T09:54:49","symbol":"AAPL","price":180.12,"volume":11175},
+{"timestamp":"2025-08-25T09:54:58","symbol":"MSFT","price":308.31,"volume":18805},
+{"timestamp":"2025-08-25T09:55:04","symbol":"TSLA","price":249.61,"volume":12586},
+{"timestamp":"2025-08-25T09:55:18","symbol":"GOOG","price":154.94,"volume":7188},
+{"timestamp":"2025-08-25T09:55:23","symbol":"TSLA","price":249.53,"volume":11073},
+{"timestamp":"2025-08-25T09:55:28","symbol":"AAPL","price":180.20,"volume":3999},
+{"timestamp":"2025-08-25T09:55:40","symbol":"AMZN","price":139.19,"volume":14436},
+{"timestamp":"2025-08-25T09:55:47","symbol":"AAPL","price":180.31,"volume":13463},
+{"timestamp":"2025-08-25T09:55:54","symbol":"AMZN","price":139.06,"volume":14660},
+{"timestamp":"2025-08-25T09:56:07","symbol":"AAPL","price":180.45,"volume":18274},
+{"timestamp":"2025-08-25T09:56:19","symbol":"AAPL","price":180.25,"volume":19207},
+{"timestamp":"2025-08-25T09:56:24","symbol":"MSFT","price":308.15,"volume":5426},
+{"timestamp":"2025-08-25T09:56:37","symbol":"TSLA","price":249.59,"volume":16075},
+{"timestamp":"2025-08-25T09:56:52","symbol":"AMZN","price":138.98,"volume":12756},
+{"timestamp":"2025-08-25T09:56:57","symbol":"AMZN","price":139.12,"volume":13137},
+{"timestamp":"2025-08-25T09:57:04","symbol":"GOOG","price":154.96,"volume":12903},
+{"timestamp":"2025-08-25T09:57:12","symbol":"GOOG","price":154.80,"volume":17075},
+{"timestamp":"2025-08-25T09:57:16","symbol":"MSFT","price":308.08,"volume":15502},
+{"timestamp":"2025-08-25T09:57:28","symbol":"GOOG","price":154.79,"volume":11722},
+{"timestamp":"2025-08-25T09:57:33","symbol":"AMZN","price":139.19,"volume":16781},
+{"timestamp":"2025-08-25T09:57:43","symbol":"MSFT","price":308.23,"volume":3877},
+{"timestamp":"2025-08-25T09:57:51","symbol":"TSLA","price":249.70,"volume":8895},
+{"timestamp":"2025-08-25T09:58:05","symbol":"GOOG","price":154.79,"volume":13264},
+{"timestamp":"2025-08-25T09:58:12","symbol":"AAPL","price":180.20,"volume":10186},
+{"timestamp":"2025-08-25T09:58:24","symbol":"TSLA","price":249.62,"volume":4418},
+{"timestamp":"2025-08-25T09:58:33","symbol":"TSLA","price":249.58,"volume":13289},
+{"timestamp":"2025-08-25T09:58:43","symbol":"TSLA","price":249.60,"volume":1802},
+{"timestamp":"2025-08-25T09:58:53","symbol":"AMZN","price":139.31,"volume":12371},
+{"timestamp":"2025-08-25T09:58:57","symbol":"AMZN","price":139.31,"volume":8206},
+{"timestamp":"2025-08-25T09:59:12","symbol":"AMZN","price":139.29,"volume":18698},
+{"timestamp":"2025-08-25T09:59:22","symbol":"GOOG","price":154.82,"volume":13069},
+{"timestamp":"2025-08-25T09:59:33","symbol":"AMZN","price":139.44,"volume":16259},
+{"timestamp":"2025-08-25T09:59:38","symbol":"MSFT","price":308.38,"volume":18456},
+{"timestamp":"2025-08-25T09:59:43","symbol":"GOOG","price":154.91,"volume":14647},
+{"timestamp":"2025-08-25T09:59:58","symbol":"AAPL","price":180.08,"volume":14234},
+{"timestamp":"2025-08-25T10:00:10","symbol":"AMZN","price":139.46,"volume":14860},
+{"timestamp":"2025-08-25T10:00:18","symbol":"AAPL","price":180.12,"volume":16480},
+{"timestamp":"2025-08-25T10:00:27","symbol":"MSFT","price":308.49,"volume":14013},
+{"timestamp":"2025-08-25T10:00:32","symbol":"AMZN","price":139.37,"volume":1758},
+{"timestamp":"2025-08-25T10:00:37","symbol":"MSFT","price":308.62,"volume":10710},
+{"timestamp":"2025-08-25T10:00:46","symbol":"MSFT","price":308.56,"volume":11910},
+{"timestamp":"2025-08-25T10:01:01","symbol":"AMZN","price":139.40,"volume":13533},
+{"timestamp":"2025-08-25T10:01:06","symbol":"TSLA","price":249.72,"volume":17454},
+{"timestamp":"2025-08-25T10:01:13","symbol":"GOOG","price":154.94,"volume":15582},
+{"timestamp":"2025-08-25T10:01:17","symbol":"TSLA","price":249.61,"volume":10419},
+{"timestamp":"2025-08-25T10:01:21","symbol":"TSLA","price":249.52,"volume":11649},
+{"timestamp":"2025-08-25T10:01:29","symbol":"AMZN","price":139.46,"volume":19472},
+{"timestamp":"2025-08-25T10:01:42","symbol":"AMZN","price":139.63,"volume":12101},
+{"timestamp":"2025-08-25T10:01:48","symbol":"GOOG","price":154.96,"volume":18619},
+{"timestamp":"2025-08-25T10:01:53","symbol":"AMZN","price":139.54,"volume":19759},
+{"timestamp":"2025-08-25T10:02:02","symbol":"GOOG","price":155.06,"volume":17808},
+{"timestamp":"2025-08-25T10:02:11","symbol":"AMZN","price":139.44,"volume":15654},
+{"timestamp":"2025-08-25T10:02:17","symbol":"AMZN","price":139.31,"volume":3742},
+{"timestamp":"2025-08-25T10:02:30","symbol":"AMZN","price":139.29,"volume":17290}
 ]

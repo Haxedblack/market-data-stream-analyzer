@@ -1,5 +1,6 @@
 import argparse
 import json 
+from src.indicators.rsi import calculate_rsi
 from src.indicators.vwap import calculate_moving_average,calculate_vwap
 from src.indicators.minmax import get_min_price,get_max_price
 from src.indicators.stats import median_price,std_dev,price_change_pct,calculate_volatility
@@ -7,29 +8,33 @@ from datetime import datetime
 from collections import defaultdict
 from colorama import init, Style, Fore
 from src.plotting import plot_price_stats
+from src.backtester import Strategy, SmaCrossoverStrategy
 import sys
 import csv
+import math
 def floor_timestamp_to_window(ts: datetime, window: int) -> datetime:
     floored_minute = (ts.minute // window )* window 
     return ts.replace(minute= floored_minute, second = 0 ,microsecond = 0)
 
-def process_entry(entry, args, buckets, stat_set, writer):
+def process_entry(entry, args, buckets, stat_set, writer, symbols_to_process):
     """
     Filters a single data entry, updates its bucket, and calculates/prints/exports stats.
     """
+    symbol = entry.get('symbol')
     # 1. Filter the entry to ensure it's the correct symbol
-    if entry.get('symbol') != args.symbol:
+    if not symbol or symbol not in symbols_to_process:
         return  # Skip this entry if the symbol doesn't match
 
     # 2. Add the entry to its corresponding time bucket
     ts = datetime.fromisoformat(entry['timestamp'])
     floored_time = floor_timestamp_to_window(ts, args.window)
-    bucket_entries = buckets[floored_time]
+    bucket_entries = buckets[symbol][floored_time]
     bucket_entries.append(entry)
     # 3. Calculate all requested stats for the updated bucket
-    print(f"\n--- Updated Stats for Time Window: {floored_time} ---")
+    print(f"\n--- Updated Stats for {symbol} Time Window: {floored_time} ---")
     # Initialize all possible CSV columns to None to avoid missing key errors
     row_data = {
+        'symbol': symbol,
         'time': floored_time.isoformat(),
         'vwap': None,
         'min': None,
@@ -37,6 +42,7 @@ def process_entry(entry, args, buckets, stat_set, writer):
         'median': None,
         'std': None,
         'change': None,
+        'rsi': None,
         'volatility': None
     }
     prices = [e['price'] for e in bucket_entries]
@@ -77,7 +83,11 @@ def process_entry(entry, args, buckets, stat_set, writer):
                 row_data['change'] = change
         except ValueError:
             pass # Silently ignore stat errors for small data sets
-
+    if args.rsi:
+        rsi = calculate_rsi(prices,period = args.rsi)
+        if not math.isnan(rsi):
+            print(f'RSI for last {args.rsi} prices: {rsi:.2f} ')
+            row_data['rsi'] = rsi
     # 4. Write the results to the CSV file if exporting is enabled
     if writer:
         writer.writerow(row_data)
@@ -93,13 +103,18 @@ parser.add_argument('--stats',type = str , default = None ,help = "Get the media
 parser.add_argument('--plot', action = 'store_true', help = 'Generate a line chart of prices and stats')
 parser.add_argument('--export',type = str , help = 'Export per-bucket stats to CSV file')
 parser.add_argument('--volatility',action = 'store_true', help = 'Calculate the price volatility per bucket')
+parser.add_argument('--rsi',type = int, help = "Calculate the RSI based on the number of price points user wants")
+parser.add_argument('--strategy',type = str,choices=['sma_crossover'],help = 'The trading strategy to test')
+parser.add_argument('--fast', type = int, metavar= 'PERIOD', help = 'The fast period for the SMA crossover')
+parser.add_argument('--slow', type = int, metavar = 'PERIOD', help = 'The slow period for the SMA crossover')
+parser.add_argument('--cash', type = float, default = 100000.0 , help = 'Initial cah for the backtest')
 args = parser.parse_args()
 
 print('File:', args.file)
 print('Symbol:', args.symbol)
 print('Window:', args.window)
 
-symbols_to_process = {s.strip.upper() for s in args.symbol.split(',')}
+symbols_to_process = {s.strip().upper() for s in args.symbol.split(',')}
 print(f'Symbols to process: {','.join(symbols_to_process)}')
 if args.plot and not args.file:
     print("Error: Plotting requires an input file. Please use the --file argument.")
@@ -112,8 +127,8 @@ if args.export:
         csv_file = open(args.export, 'w', newline='')
         
         # Define the full set of possible headers
-        fieldnames = ['time', 'vwap', 'min', 'max', 'median', 'std', 'change', 'volatility']
-        csv_writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        fieldnames = ['symbol','time', 'vwap', 'min', 'max', 'median', 'std', 'change', 'volatility']
+        csv_writer = csv.DictWriter(csv_file, fieldnames=fieldnames, extrasaction = 'ignore')
         csv_writer.writeheader()
     except IOError as e:
         print(f"Error opening export file: {e}")
@@ -157,3 +172,25 @@ else:
             process_entry(entry, args, buckets, stat_set, csv_writer, symbols_to_process)
         except (json.JSONDecodeError, KeyError):
             continue
+if args.strategy == 'sma_crossover':
+    if not args.file:
+        print('Error: Backtesting is only available in file mode (--file).')
+        sys.exit(1)
+    if not (args.fast and args.slow):
+        print("Error: --fast and --slow both periods required for sma crossover strategy")
+        sys.exit(1)
+
+    print('\n--- Running SMA Crossover Strategy for '+  list(symbols_to_process)[0])
+    backtest_symbol = list(symbols_to_process)[0]
+    
+    strategy = SmaCrossoverStrategy(
+        fast_period=args.fast,
+        slow_period=args.slow,
+        initial_cash= args.cash,
+    )
+    sorted_windows = sorted(buckets[backtest_symbol].keys())
+    for window in sorted_windows:
+        entries = buckets[backtest_symbol][window]
+        strategy.generate_signals(entries)
+
+    strategy.print_summary()
