@@ -9,6 +9,7 @@ from collections import defaultdict
 from colorama import init, Style, Fore
 from src.plotting import plot_price_stats
 from src.backtester import Strategy, SmaCrossoverStrategy
+from src.api_client import fetch_intraday_data
 import sys
 import csv
 import math
@@ -108,6 +109,7 @@ parser.add_argument('--strategy',type = str,choices=['sma_crossover'],help = 'Th
 parser.add_argument('--fast', type = int, metavar= 'PERIOD', help = 'The fast period for the SMA crossover')
 parser.add_argument('--slow', type = int, metavar = 'PERIOD', help = 'The slow period for the SMA crossover')
 parser.add_argument('--cash', type = float, default = 100000.0 , help = 'Initial cah for the backtest')
+parser.add_argument('--live', action = 'store_value', help = "Enable live mode to fetch data from the API. ")
 args = parser.parse_args()
 
 print('File:', args.file)
@@ -134,9 +136,6 @@ if args.export:
         print(f"Error opening export file: {e}")
         # We can choose to exit or just disable exporting
         csv_writer = None
-#loading file
-all_data = []
-buckets = defaultdict(lambda: defaultdict(list))
 # --- Stat Flag Handling ---
 VALID_STATS = {'median', 'std', 'change'}
 stat_set = set() # Default to an empty set
@@ -154,14 +153,36 @@ if args.stats:
     
     # If we get here, all stats are valid
     stat_set = user_stats
-if args.file:
-    # Logic for reading from a file
-    print(f"Reading from file: {args.file}")
-    with open(args.file, 'r') as f:
-        all_data = json.load(f)
-    # Now, process each entry from the file
-    for entry in all_data:
-        process_entry(entry, args, buckets, stat_set , csv_writer, symbols_to_process)
+#loading file
+all_data = []
+buckets = defaultdict(lambda: defaultdict(list))
+if args.live:
+    print("-- Live Mode Enabled --")
+    live_symbol = list(symbols_to_process)[0]
+    if len(symbols_to_process)>1:
+        print(f"Warning: Live mode fectches one symbol at a time. Using first symbol: {live_symbol[0]}")
+    try:
+        all_data = fecth_intraday_data(live_symbol)
+        print(f"Successfully fetched {len(all_data)} recent data points for {live_symbol}.")
+    except Exception as e:
+        print(f"Error fetching live data: {e}")
+        sys.exit(1)
+
+elif args.file:
+    print(f"--- File Mode Enabled: Reading from {args.file} ---")
+    try:
+        with open(args.file,'r')as f:
+            content = f.read()
+            if content.strip().startswith('['):
+                all_data = json.loads(content)
+            else:
+                all_data = [json.loads(line) for line in content.strip().split('\n')]
+    except FileNotFoundError:
+        print(f"Error: File not found at {args.file}")
+        sys.exit(1)
+    except json.JSONDecodeError:
+        print(f"Error: Could not decode JSON from {args.file}")
+        sys.exit(1)
 else:
     # Logic for reading from a stream
     print("Listening to stdin stream... (Ctrl+C to stop)")
@@ -172,6 +193,17 @@ else:
             process_entry(entry, args, buckets, stat_set, csv_writer, symbols_to_process)
         except (json.JSONDecodeError, KeyError):
             continue
+    if csv_file:
+        csv_file.close()
+    sys.exit(0)
+print("\n--- Processing Data ---")
+for entry in all_data:
+    process_entry(entry, args, buckets, stat_set, csv_writer, symbols_to_process)
+
+if csv_file:
+    csv_file.close()
+    print(f"\nExport complete. Data saved to {args.export}")
+
 if args.strategy == 'sma_crossover':
     if not args.file:
         print('Error: Backtesting is only available in file mode (--file).')
